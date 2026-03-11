@@ -19,9 +19,10 @@ function deriveThemeText(theme) {
 function deriveHeroText(heroType) {
   switch (heroType) {
     case 'Video Sales Letter (VSL)':
-      return 'Video Sales Letter (VSL). HERO SECTION: Gunakan layout Hero dengan Video embed sebagai elemen utama.';
+      return 'Video Sales Letter (VSL). HERO SECTION: Gunakan layout VSL. Video embed (placeholder YT/Vimeo) harus menjadi fokus utama, dengan Headline besar di atasnya dan tombol CTA di bawahnya. JANGAN gunakan gambar samping.';
     case 'Typographic Only (Teks Besar)':
-      return 'Typographic Only. HERO SECTION: Gunakan layout Hero berbasis tipografi besar tanpa gambar.';
+    case 'Typographic Driven':
+      return 'Typographic Only (Teks Besar). HERO SECTION: Gunakan layout Hero berbasis tipografi besar tanpa gambar.';
     default:
       return 'Standard Image. HERO SECTION: Gunakan layout Hero standar (Gambar/Ilustrasi + Copy).';
   }
@@ -116,6 +117,7 @@ STRUKTUR: FULL-WIDTH MOBILE-FIRST (Mutlak).
 
 PROFIL PRODUK & MARKET:
 - Nama Produk: ${d.productName}
+- Deskripsi & Benefit Utama: ${d.description}
 - Kategori: ${d.productType}
 - Target Market: ${d.targetAudience}
 - Tujuan Utama: ${d.goal}

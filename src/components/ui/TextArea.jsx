@@ -20,8 +20,8 @@ export default function TextArea({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         rows={rows}
-        className={`w-full bg-white dark:bg-slate-800 rounded-lg py-2.5 px-3 text-sm border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 dark:text-slate-100 dark:placeholder-slate-500 resize-y ${
-          error ? "border-red-500" : "border-slate-300 dark:border-slate-600"
+        className={`w-full bg-white dark:bg-dark-800 rounded-lg py-2.5 px-3 text-sm border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 dark:text-slate-100 dark:placeholder-slate-500 resize-y ${
+          error ? "border-red-500" : "border-slate-300 dark:border-dark-600"
         }`}
       />
     </div>

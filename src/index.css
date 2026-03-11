@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 @import "tailwindcss";
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   --color-brand-50: #f0fdf4;
   --color-brand-100: #dcfce7;
@@ -12,7 +14,21 @@
   --color-brand-700: #15803d;
   --color-brand-800: #166534;
   --color-brand-900: #14532d;
+  --color-dark-950: #030305;
+  --color-dark-900: #0a0a0e;
+  --color-dark-800: #111116;
+  --color-dark-700: #1a1a22;
+  --color-dark-600: #25252f;
   --font-family-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+}
+
+*, *::before, *::after {
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+@keyframes blink {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
 }
 
 body {

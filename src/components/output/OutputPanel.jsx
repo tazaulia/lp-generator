@@ -1,11 +1,31 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import useTypewriter from '../../hooks/useTypewriter';
 import { copyToClipboard } from '../../utils/clipboard';
 
-export default function OutputPanel({ prompt }) {
+function BlinkingDots() {
+  return <span className="animate-[blink_1s_step-end_infinite]">...</span>;
+}
+
+export default function OutputPanel({ prompt, onComplete }) {
   const { displayedText, isComplete, skip } = useTypewriter(prompt, 8000);
   const containerRef = useRef(null);
   const hasPrompt = prompt && prompt.length > 0;
+  const animationStartedRef = useRef(false);
+
+  useEffect(() => {
+    if (containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
+  }, [displayedText]);
+
+  useEffect(() => {
+    if (!isComplete) {
+      animationStartedRef.current = true;
+    } else if (animationStartedRef.current) {
+      animationStartedRef.current = false;
+      onComplete?.();
+    }
+  }, [isComplete, onComplete]);
 
   const handleCopy = async () => {
     const success = await copyToClipboard(prompt);
@@ -24,10 +44,9 @@ export default function OutputPanel({ prompt }) {
 
   return (
     <div>
-      <h2 className="text-2xl font-bold text-slate-800 dark:text-slate-100 mb-4">Result</h2>
-      <div className="rounded-2xl border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 shadow-sm overflow-hidden">
-        <div className="flex items-center justify-between px-5 py-3 border-b border-slate-200 dark:border-slate-700">
-          <h3 className="text-sm font-semibold text-slate-800 dark:text-slate-100">AI Prompt Output</h3>
+      <div className="rounded-2xl border border-slate-200 dark:border-dark-700 bg-white dark:bg-dark-800 shadow-sm overflow-hidden">
+        <div className="flex items-center justify-between px-5 py-5 border-b border-slate-200 dark:border-dark-700">
+          <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100">Result: AI Prompt Output</h2>
           {hasPrompt && (
             <button
               onClick={handleCopy}
@@ -43,7 +62,7 @@ export default function OutputPanel({ prompt }) {
 
         <div
           ref={containerRef}
-          className="px-5 py-4 h-[400px] overflow-y-auto bg-slate-100 text-slate-800 dark:bg-slate-900 dark:text-slate-100"
+          className="px-5 py-4 h-[400px] overflow-y-auto bg-slate-100 text-slate-800 dark:bg-dark-900 dark:text-slate-100"
           onClick={!isComplete ? skip : undefined}
         >
           {hasPrompt ? (
@@ -52,13 +71,13 @@ export default function OutputPanel({ prompt }) {
               {!isComplete && <span className="animate-pulse">|</span>}
             </pre>
           ) : (
-            <div className="flex items-center justify-center h-full text-slate-500 text-sm">
-              Isi form di sebelah kiri, lalu klik "Generate Prompt"
-            </div>
+            <pre className="text-xs leading-relaxed whitespace-pre-wrap font-mono text-slate-400 dark:text-slate-500">
+              Isi form di sebelah kiri, lalu klik &quot;Generate Prompt&quot;<BlinkingDots />
+            </pre>
           )}
         </div>
 
-        <div className={`px-5 py-4 border-t border-slate-200 dark:border-slate-700 transition-opacity duration-300 ${
+        <div className={`px-5 py-4 border-t border-slate-200 dark:border-dark-700 transition-opacity duration-300 ${
           hasPrompt && isComplete ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}>
           <button

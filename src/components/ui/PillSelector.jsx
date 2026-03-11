@@ -42,7 +42,7 @@ export default function PillSelector({
             className={`rounded-full px-4 py-2 text-sm cursor-pointer transition-all duration-200 ${
               isSelected(option)
                 ? "bg-brand-500 text-white"
-                : "bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-brand-400"
+                : "bg-white dark:bg-dark-800 border border-slate-300 dark:border-dark-600 text-slate-600 dark:text-slate-300 hover:border-brand-400"
             }`}
           >
             {option}

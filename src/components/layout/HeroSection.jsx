@@ -1,6 +1,6 @@
 export default function HeroSection() {
   return (
-    <section className="w-full bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-700 py-10 sm:py-14 text-center">
+    <section className="w-full bg-white dark:bg-dark-900 border-b border-slate-200 dark:border-dark-700 py-10 sm:py-14 text-center">
       <div className="mx-auto max-w-2xl px-4">
         <div className="inline-block px-3 py-1 mb-4 rounded-full bg-brand-50 dark:bg-brand-900/30 border border-brand-200 dark:border-brand-700 text-brand-700 dark:text-brand-400 text-xs font-medium">
           Landing Page Builder

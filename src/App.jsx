@@ -9,12 +9,16 @@ import OutputPanel from './components/output/OutputPanel';
 function App() {
   const [prompt, setPrompt] = useState('');
   const [, setErrors] = useState([]);
+  const [isGenerating, setIsGenerating] = useState(false);
   const outputRef = useRef(null);
 
   const handleGenerate = (newPrompt, newErrors) => {
     setErrors(newErrors);
     if (newPrompt) {
-      setPrompt(newPrompt);
+      if (newPrompt !== prompt) {
+        setPrompt(newPrompt);
+        setIsGenerating(true);
+      }
       // On mobile, scroll to output panel
       setTimeout(() => {
         if (window.innerWidth < 1024 && outputRef.current) {
@@ -27,15 +31,15 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col">
+    <div className="min-h-screen bg-slate-50 dark:bg-dark-950 flex flex-col">
       <Header />
       <HeroSection />
       <main className="flex-1">
         <TwoPanelLayout
-          left={<FormPanel onGenerate={handleGenerate} />}
+          left={<FormPanel onGenerate={handleGenerate} isGenerating={isGenerating} />}
           right={
             <div ref={outputRef}>
-              <OutputPanel prompt={prompt} />
+              <OutputPanel prompt={prompt} onComplete={() => setIsGenerating(false)} />
             </div>
           }
         />
