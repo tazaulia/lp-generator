@@ -1,4 +1,5 @@
 import { useState, useRef } from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/layout/Header';
 import HeroSection from './components/layout/HeroSection';
 import TwoPanelLayout from './components/layout/TwoPanelLayout';
@@ -45,6 +46,7 @@ function App() {
         />
       </main>
       <Footer />
+      <Analytics />
     </div>
   );
 }
