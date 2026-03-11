@@ -1,0 +1,41 @@
+import React from "react";
+
+interface TextInputProps {
+  label?: string;
+  value: string;
+  onChange: (value: string) => void;
+  placeholder?: string;
+  required?: boolean;
+  error?: boolean;
+  type?: React.HTMLInputTypeAttribute;
+}
+
+export default function TextInput({
+  label,
+  value,
+  onChange,
+  placeholder,
+  required = false,
+  error = false,
+  type = "text",
+}: TextInputProps) {
+  return (
+    <div>
+      {label && (
+        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
+          {label}
+          {required && <span className="text-brand-500 ml-0.5">*</span>}
+        </label>
+      )}
+      <input
+        type={type}
+        value={value}
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
+        placeholder={placeholder}
+        className={`w-full bg-white dark:bg-dark-800 rounded-lg py-2.5 px-3 text-sm border transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-brand-500 focus:border-brand-500 dark:text-slate-100 dark:placeholder-slate-500 ${
+          error ? "border-red-500" : "border-slate-300 dark:border-dark-600"
+        }`}
+      />
+    </div>
+  );
+}
