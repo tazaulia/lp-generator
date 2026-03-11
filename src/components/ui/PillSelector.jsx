@@ -25,7 +25,7 @@ export default function PillSelector({
   return (
     <div>
       {label && (
-        <label className="block text-sm font-medium text-slate-700 mb-1.5">
+        <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1.5">
           {label}
         </label>
       )}
@@ -42,7 +42,7 @@ export default function PillSelector({
             className={`rounded-full px-4 py-2 text-sm cursor-pointer transition-all duration-200 ${
               isSelected(option)
                 ? "bg-brand-500 text-white"
-                : "bg-white border border-slate-300 text-slate-600 hover:border-brand-400"
+                : "bg-white dark:bg-slate-800 border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 hover:border-brand-400"
             }`}
           >
             {option}
