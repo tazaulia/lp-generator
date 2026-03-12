@@ -12,9 +12,10 @@ interface SectionDetailProdukProps {
   state: FormState;
   dispatch: Dispatch<FormAction>;
   errors: string[];
+  isComplete?: boolean;
 }
 
-export default function SectionDetailProduk({ state, dispatch, errors }: SectionDetailProdukProps) {
+export default function SectionDetailProduk({ state, dispatch, errors, isComplete }: SectionDetailProdukProps) {
   const showCustomCTA = state.cta === 'Isi Manual';
 
   return (
@@ -22,6 +23,7 @@ export default function SectionDetailProduk({ state, dispatch, errors }: Section
       number={4}
       title="Detail Produk & Copy"
       subtitle="Tentukan penawaran dan copywriting utama."
+      isComplete={isComplete}
     >
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <TextInput

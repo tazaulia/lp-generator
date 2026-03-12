@@ -10,9 +10,10 @@ interface SectionProdukTujuanProps {
   state: FormState;
   dispatch: Dispatch<FormAction>;
   errors: string[];
+  isComplete?: boolean;
 }
 
-export default function SectionProdukTujuan({ state, dispatch, errors }: SectionProdukTujuanProps) {
+export default function SectionProdukTujuan({ state, dispatch, errors, isComplete }: SectionProdukTujuanProps) {
   const showCustomType = state.productType === 'Lainnya (Isi Manual)';
 
   return (
@@ -20,6 +21,7 @@ export default function SectionProdukTujuan({ state, dispatch, errors }: Section
       number={2}
       title="Produk & Tujuan"
       subtitle="Apa yang Anda jual dan apa goal utamanya?"
+      isComplete={isComplete}
     >
       <GroupedDropdown
         label="Tipe Produk"

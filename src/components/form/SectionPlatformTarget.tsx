@@ -8,14 +8,16 @@ interface SectionPlatformTargetProps {
   state: FormState;
   dispatch: Dispatch<FormAction>;
   errors: string[];
+  isComplete?: boolean;
 }
 
-export default function SectionPlatformTarget({ state, dispatch, errors }: SectionPlatformTargetProps) {
+export default function SectionPlatformTarget({ state, dispatch, errors, isComplete }: SectionPlatformTargetProps) {
   return (
     <FormSection
       number={7}
       title="Platform Target"
       subtitle="Pilih platform tujuan landing page."
+      isComplete={isComplete}
     >
       <PillSelector
         options={platformOptions}

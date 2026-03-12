@@ -8,14 +8,16 @@ interface SectionElemenTambahanProps {
   state: FormState;
   dispatch: Dispatch<FormAction>;
   errors?: string[];
+  isComplete?: boolean;
 }
 
-export default function SectionElemenTambahan({ state, dispatch }: SectionElemenTambahanProps) {
+export default function SectionElemenTambahan({ state, dispatch, isComplete }: SectionElemenTambahanProps) {
   return (
     <FormSection
       number={5}
       title="Elemen Tambahan"
       subtitle="Pilih section tambahan yang ingin dimasukkan."
+      isComplete={isComplete}
     >
       <PillSelector
         options={additionalElements}

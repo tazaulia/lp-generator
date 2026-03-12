@@ -39,12 +39,9 @@ export default function OutputPanel({ prompt, onComplete }: OutputPanelProps) {
     }
   };
 
-  const handleCTA = async () => {
-    window.open('https://z.ai', '_blank');
-    const success = await copyToClipboard(prompt);
-    if (!success) {
-      alert('Prompt gagal di-copy. Silakan copy manual.');
-    }
+  const handleCTA = () => {
+    const url = `https://chat.z.ai/?q=${encodeURIComponent(prompt)}`;
+    window.open(url, '_blank');
   };
 
   return (

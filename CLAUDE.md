@@ -9,7 +9,7 @@ A client-side AI prompt generator for Indonesian SMBs (UMKM). Users fill a 7-ste
 - **Language**: TypeScript (migrated from JS)
 - **UI Language**: Bahasa Indonesia
 - **Deployment**: Vercel
-- **Backend (planned)**: Supabase (auth, saved prompts, payments)
+- **Backend (deferred)**: Supabase (auth, saved prompts, payments — when ready for market)
 
 ## Commands
 ```bash
@@ -21,48 +21,41 @@ npm run preview  # Preview production build
 
 ## Architecture
 
-### Config-Driven Form Engine
-The app uses a config-driven architecture where each product type (landing page, email, ads, etc.) is defined by a config file + prompt template. The engine renders forms and generates prompts generically.
-
+### Structure
 ```
 src/
-  types/index.ts              # Core interfaces (FormField, FormSection, ProductConfig, etc.)
-  configs/
-    registry.ts               # Maps product IDs to configs
-    products/
-      landing-page.ts         # Landing page config (sections, fields, options, validation)
-  templates/
-    landing-page.ts           # Prompt template (process + generate)
-  engine/
-    useProductForm.ts          # Generic hook: state, validation, generation
-    FormRenderer.tsx           # Renders any ProductConfig as a form
-    SectionRenderer.tsx        # Renders a section's fields by type
-    resolveFields.ts           # Custom field resolution + fallback application
   components/
+    form/
+      FormPanel.tsx            # Orchestrates all 7 sections, generate/reset buttons
+      FormSection.tsx          # Reusable section wrapper (number, title, subtitle)
+      Section*.tsx             # 7 section components, one per form step
     ui/                        # Reusable primitives (GroupedDropdown, PillSelector, TextInput, etc.)
     layout/                    # Header, HeroSection, TwoPanelLayout, Footer
     output/                    # OutputPanel, TypewriterText
+  data/                        # 14 option files (frameworkOptions, toneOptions, etc.)
   hooks/
+    useFormState.ts            # FormState interface + useReducer (SET_FIELD, TOGGLE_ELEMENT, RESET)
+    usePromptGenerator.ts      # Validates → processes → generates prompt string
     useTypewriter.ts           # rAF-based typewriter animation
+  templates/
+    promptTemplate.ts          # processFormData() resolves custom fields/fallbacks, generatePrompt() builds the prompt
+  utils/
+    validation.ts              # validateForm() — checks required fields, returns error field IDs
+    fallbacks.ts               # Default text for optional fields when left empty
+    clipboard.ts               # Copy-to-clipboard utility
   context/
     ThemeContext.tsx            # Dark/light mode toggle
-  lib/                         # Supabase client, auth, saved prompts (stubs)
   App.tsx                      # Root component
   main.tsx                     # Entry point
 docs/                          # PRD, prompt configs, reference materials
 ```
 
-### How to Add a New Product
-1. Create `src/configs/products/<product-id>.ts` — define sections, fields, options, validation rules, fallbacks
-2. Create `src/templates/<product-id>.ts` — implement `PromptTemplate` with `process()` and `generate()`
-3. Register in `src/configs/registry.ts`
-4. No engine code changes needed
-
 ### Key Patterns
-- **FormState**: `Record<string, string | boolean | string[]>` — dynamic, driven by config
-- **Custom fields**: Fields with `customTriggerValue` (e.g., "Lainnya (Isi Manual)") reveal a custom text input via `customFieldId`
-- **Fallbacks**: Optional fields define `fallback` text used in the prompt when empty
+- **FormState**: Typed interface in `useFormState.ts` with explicit fields per section
+- **Custom fields**: Some dropdowns have a "Lainnya (Isi Manual)" option that reveals a custom text input (e.g., `productType` → `productTypeCustom`)
+- **Fallbacks**: Optional fields use default text in the prompt when left empty (defined in `utils/fallbacks.ts`)
 - **Validation**: Only triggers after first generate attempt, clears reactively as fields are filled
+- **Prompt generation**: `processFormData()` resolves custom fields + applies fallbacks → `generatePrompt()` interpolates into the final prompt string
 
 ## Conventions
 - Component files: PascalCase (`.tsx`)

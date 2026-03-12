@@ -10,9 +10,10 @@ interface SectionTargetMarketProps {
   state: FormState;
   dispatch: Dispatch<FormAction>;
   errors: string[];
+  isComplete?: boolean;
 }
 
-export default function SectionTargetMarket({ state, dispatch, errors }: SectionTargetMarketProps) {
+export default function SectionTargetMarket({ state, dispatch, errors, isComplete }: SectionTargetMarketProps) {
   const showCustomAudience = state.targetAudience === 'Lainnya (Isi Manual)';
 
   return (
@@ -20,6 +21,7 @@ export default function SectionTargetMarket({ state, dispatch, errors }: Section
       number={3}
       title="Target Market"
       subtitle="Siapa audiens Anda dan seberapa tahu mereka?"
+      isComplete={isComplete}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <GroupedDropdown

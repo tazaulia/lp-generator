@@ -9,14 +9,16 @@ interface SectionFrameworkToneProps {
   state: FormState;
   dispatch: Dispatch<FormAction>;
   errors: string[];
+  isComplete?: boolean;
 }
 
-export default function SectionFrameworkTone({ state, dispatch, errors }: SectionFrameworkToneProps) {
+export default function SectionFrameworkTone({ state, dispatch, errors, isComplete }: SectionFrameworkToneProps) {
   return (
     <FormSection
       number={1}
       title="Framework & Tone"
       subtitle="Tentukan struktur psikologi dan gaya bahasa copywriting."
+      isComplete={isComplete}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <GroupedDropdown

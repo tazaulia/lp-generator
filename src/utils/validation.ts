@@ -65,3 +65,41 @@ export function validateForm(state: FormState): ValidationResult {
 
   return { isValid: errors.length === 0, errors };
 }
+
+/**
+ * Returns a 7-element array indicating whether each section's mandatory fields are complete.
+ * Section 5 (ElemenTambahan) has no mandatory fields and always returns false (nothing to complete).
+ */
+export function getSectionCompletion(state: FormState): boolean[] {
+  const s1 = !!state.framework && !!state.tone;
+
+  const productTypeOk =
+    !!state.productType &&
+    (state.productType !== 'Lainnya (Isi Manual)' || !!state.productTypeCustom?.trim());
+  const s2 = productTypeOk && !!state.goal;
+
+  const targetAudienceOk =
+    !!state.targetAudience &&
+    (state.targetAudience !== 'Lainnya (Isi Manual)' || !!state.targetAudienceCustom?.trim());
+  const s3 = !!state.awarenessLevel && targetAudienceOk;
+
+  const ctaOk =
+    !!state.cta && (state.cta !== 'Isi Manual' || !!state.ctaCustom?.trim());
+  const s4 =
+    !!state.productName?.trim() &&
+    !!state.description?.trim() &&
+    ctaOk &&
+    !!state.scarcityType;
+
+  const s5 = false; // no mandatory fields
+
+  const brandColorOk =
+    !!state.brandColor &&
+    (state.brandColor !== 'Lainnya / Custom (Ketik Hex/Nama)' || !!state.brandColorCustom?.trim());
+  const s6 =
+    brandColorOk && !!state.backgroundTheme && !!state.designStyle && !!state.heroType;
+
+  const s7 = !!state.platform;
+
+  return [s1, s2, s3, s4, s5, s6, s7];
+}

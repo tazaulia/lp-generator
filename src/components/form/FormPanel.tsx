@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
 import useFormState from '../../hooks/useFormState';
 import usePromptGenerator from '../../hooks/usePromptGenerator';
-import { validateForm } from '../../utils/validation';
+import { validateForm, getSectionCompletion } from '../../utils/validation';
 import Button from '../ui/Button';
 import SectionFrameworkTone from './SectionFrameworkTone';
 import SectionProdukTujuan from './SectionProdukTujuan';
@@ -24,6 +24,7 @@ export default function FormPanel({ onGenerate, isGenerating = false }: FormPane
 
   // Reactively compute errors from current state — clears automatically when fields are filled
   const activeErrors = hasAttempted ? validateForm(state).errors : [];
+  const sectionCompletion = getSectionCompletion(state);
 
   const handleGenerate = () => {
     setHasAttempted(true);
@@ -55,13 +56,13 @@ export default function FormPanel({ onGenerate, isGenerating = false }: FormPane
 
   return (
     <div ref={formRef} className="space-y-6">
-      <SectionFrameworkTone state={state} dispatch={dispatch} errors={activeErrors} />
-      <SectionProdukTujuan state={state} dispatch={dispatch} errors={activeErrors} />
-      <SectionTargetMarket state={state} dispatch={dispatch} errors={activeErrors} />
-      <SectionDetailProduk state={state} dispatch={dispatch} errors={activeErrors} />
-      <SectionElemenTambahan state={state} dispatch={dispatch} errors={activeErrors} />
-      <SectionIdentitasVisual state={state} dispatch={dispatch} errors={activeErrors} />
-      <SectionPlatformTarget state={state} dispatch={dispatch} errors={activeErrors} />
+      <SectionFrameworkTone state={state} dispatch={dispatch} errors={activeErrors} isComplete={sectionCompletion[0]} />
+      <SectionProdukTujuan state={state} dispatch={dispatch} errors={activeErrors} isComplete={sectionCompletion[1]} />
+      <SectionTargetMarket state={state} dispatch={dispatch} errors={activeErrors} isComplete={sectionCompletion[2]} />
+      <SectionDetailProduk state={state} dispatch={dispatch} errors={activeErrors} isComplete={sectionCompletion[3]} />
+      <SectionElemenTambahan state={state} dispatch={dispatch} errors={activeErrors} isComplete={sectionCompletion[4]} />
+      <SectionIdentitasVisual state={state} dispatch={dispatch} errors={activeErrors} isComplete={sectionCompletion[5]} />
+      <SectionPlatformTarget state={state} dispatch={dispatch} errors={activeErrors} isComplete={sectionCompletion[6]} />
 
       {activeErrors.length > 0 && (
         <div className="flex items-center gap-3 px-4 py-3 rounded-xl bg-red-500/10 border border-red-500/30 text-red-400 text-sm">

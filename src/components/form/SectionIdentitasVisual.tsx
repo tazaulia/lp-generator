@@ -13,9 +13,10 @@ interface SectionIdentitasVisualProps {
   state: FormState;
   dispatch: Dispatch<FormAction>;
   errors: string[];
+  isComplete?: boolean;
 }
 
-export default function SectionIdentitasVisual({ state, dispatch, errors }: SectionIdentitasVisualProps) {
+export default function SectionIdentitasVisual({ state, dispatch, errors, isComplete }: SectionIdentitasVisualProps) {
   const showCustomColor = state.brandColor === 'Lainnya / Custom (Ketik Hex/Nama)';
 
   return (
@@ -23,6 +24,7 @@ export default function SectionIdentitasVisual({ state, dispatch, errors }: Sect
       number={6}
       title="Identitas Visual & Desain"
       subtitle="Atur tampilan visual, warna, dan layout."
+      isComplete={isComplete}
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <GroupedDropdown
