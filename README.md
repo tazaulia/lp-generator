@@ -1,16 +1,59 @@
-# React + Vite
+# CuanMania — Landing Page Prompt Generator
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A client-side AI prompt generator for Indonesian SMBs (UMKM). Fill out a 7-step form describing your landing page needs, click "Generate Prompt", and get a structured prompt ready to paste into [z.ai](https://z.ai) to generate an HTML landing page.
 
-Currently, two official plugins are available:
+**Live:** [cuanmania.vercel.app](https://cuanmania.vercel.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## What It Does
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. User fills in a 7-section form (product, audience, tone, layout, etc.) in Bahasa Indonesia
+2. Click "Generate Prompt"
+3. A structured prompt is generated and shown with a typewriter animation
+4. User copies the prompt and pastes it into z.ai
+5. z.ai generates a complete HTML landing page
 
-## Expanding the ESLint configuration
+## Tech Stack
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **React 19** + **Vite 7**
+- **TypeScript**
+- **Tailwind CSS 4** (via Vite plugin)
+- **Vercel** (deployment + analytics)
+
+## Getting Started
+
+```bash
+npm install
+npm run dev
+```
+
+Other commands:
+
+```bash
+npm run build    # Production build
+npm run lint     # ESLint
+npm run preview  # Preview production build
+```
+
+## Project Structure
+
+```
+src/
+  components/
+    form/        # FormPanel + 7 section components
+    ui/          # Reusable primitives (dropdowns, pills, inputs)
+    layout/      # Header, Hero, Footer, TwoPanelLayout
+    output/      # OutputPanel, TypewriterText
+  data/          # Option arrays for dropdowns and selectors
+  hooks/         # useFormState, usePromptGenerator, useTypewriter
+  templates/     # promptTemplate.ts — core prompt generation logic
+  utils/         # validation, fallbacks, clipboard
+  context/       # ThemeContext (dark/light mode)
+```
+
+## Roadmap
+
+- [ ] Supabase integration (auth, saved prompts, payments)
+- [ ] User accounts and prompt history
+- [ ] Monetization / premium tiers

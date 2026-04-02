@@ -3,6 +3,8 @@
 ## What This Is
 A client-side AI prompt generator for Indonesian SMBs (UMKM). Users fill a 7-step form describing their landing page needs, click "Generate Prompt", and get a structured prompt they copy into z.ai to generate an HTML landing page.
 
+**Live URL:** https://cuanmania.vercel.app
+
 ## Tech Stack
 - **Framework**: React 19 + Vite 7
 - **Styling**: Tailwind CSS 4 (via Vite plugin)
