@@ -9,12 +9,12 @@ interface Props {
 }
 
 export default function SectionColors({ state, dispatch, errors }: Props) {
-  const hasError = errors.includes('Palet Warna');
+  const hasError = errors.includes('Color Palette');
 
   return (
     <div>
       {hasError && (
-        <p className="text-xs text-red-500 mb-3">Pilih palet warna untuk melanjutkan.</p>
+        <p className="text-xs text-red-500 mb-3">Pick a color palette to continue.</p>
       )}
       <div className="grid grid-cols-1 gap-2">
         {colorPaletteOptions.map((palette) => {

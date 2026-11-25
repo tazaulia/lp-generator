@@ -1,6 +1,6 @@
 const toneOptions = [
   {
-    group: "Populer & Efektif",
+    group: "Popular & Effective",
     options: [
       { value: "Friendly & Conversational", label: "Friendly & Conversational" },
       { value: "Professional & Formal", label: "Professional & Formal" },

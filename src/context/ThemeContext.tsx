@@ -13,7 +13,7 @@ interface ThemeProviderProps {
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
   const [isDark, setIsDark] = useState(() => {
-    const stored = localStorage.getItem('lpgenv2-theme');
+    const stored = localStorage.getItem('lpgen-theme');
     if (stored) return stored === 'dark';
     return window.matchMedia('(prefers-color-scheme: dark)').matches;
   });
@@ -25,7 +25,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     } else {
       root.classList.remove('dark');
     }
-    localStorage.setItem('lpgenv2-theme', isDark ? 'dark' : 'light');
+    localStorage.setItem('lpgen-theme', isDark ? 'dark' : 'light');
   }, [isDark]);
 
   const toggleTheme = () => setIsDark(prev => !prev);

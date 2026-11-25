@@ -13,14 +13,14 @@ Fill in the values below. The rest of the prompt uses them to generate the full 
 - **Product type:** [e.g. cloud-based POS and inventory management app for SMEs]
 - **Core outcome promise:** [e.g. manage sales, stock, and reports from your phone — in under 5 minutes a day]
 - **Key features (3):** [e.g. real-time stock sync, automated reports, multi-outlet support]
-- **Key integrations:** [e.g. GoPay, OVO, Shopee, Tokopedia]
-- **Pricing model:** [e.g. Rp 99.000/month — cancel anytime]
+- **Key integrations:** [e.g. Stripe, PayPal, Shopify, Amazon]
+- **Pricing model:** [e.g. $19/month — cancel anytime]
 - **Free trial:** [e.g. 14-day free trial, no credit card required]
-- **User metric:** [e.g. 10.000+ active businesses, 4.8/5 App Store rating]
-- **Price:** [e.g. Rp 99.000/bulan]
-- **Original / crossed-out price:** [e.g. Rp 199.000/bulan]
+- **User metric:** [e.g. 10,000+ active businesses, 4.8/5 App Store rating]
+- **Price:** [e.g. $19/month]
+- **Original / crossed-out price:** [e.g. $39/month]
 - **Access type:** [e.g. monthly subscription, cancel anytime, free trial included]
-- **Language:** [e.g. Indonesian (Bahasa Indonesia)]
+- **Language:** [e.g. English]
 - **Tone:** [e.g. practical, confident, no-jargon — speak like a smart friend, not a tech salesperson]
 - **Accent color:** [e.g. #0a84ff]
 - **Gradient (3 stops):** [e.g. linear-gradient(135deg, #0a84ff, #5ac8fa, #64d2ff)]
@@ -113,7 +113,7 @@ Flex row, centered, `gap: 14px; margin-bottom: 8px`:
 Below strip: `font-size: 11px; color: rgba(0,0,0,.42); font-weight: 600; text-align: center`
 Write: Product name · [user metric]
 
-**1e. CTA button** → `href="#fitur"`
+**1e. CTA button** → `href="#features"`
 Write a curiosity-driven question asking what features are included — conversational (e.g. "What Can It Do?")
 
 Below button — hint text: `font-size: 12px; color: rgba(0,0,0,.42); margin-top: 10px`
@@ -148,7 +148,7 @@ Title: Write: what makes this app different from managing manually or using spre
 
 ### SECTION 2 — WHAT IS THIS? (dark background #000)
 
-`id="produk"` · `padding: 52px 18px` · `color: #fff`
+`id="product"` · `padding: 52px 18px` · `color: #fff`
 Inner: `max-width: 560px; margin: 0 auto; text-align: center`
 
 - **Title:** Write a simple 4–6 word question: "What exactly does it do?"
@@ -160,14 +160,14 @@ Inner: `max-width: 560px; margin: 0 auto; text-align: center`
 - **4 feature list items:** Write 4 credibility bullets: (1) user count and rating, (2) how simple the setup is (be specific — under X minutes), (3) what integrations are supported, (4) what problems it eliminates compared to manual methods.
 
 - **Two CTA buttons:**
-  - Ghost → `href="#testimoni-awal"` — Write "See User Reviews" equivalent
-  - Filled → `href="#fitur"` — Write "See All Features" equivalent
+  - Ghost → `href="#early-testimonials"` — Write "See User Reviews" equivalent
+  - Filled → `href="#features"` — Write "See All Features" equivalent
 
 ---
 
 ### SECTION 3 — USER TESTIMONIALS (light background)
 
-`id="testimoni-awal"` · `padding: 40px 18px 48px`
+`id="early-testimonials"` · `padding: 40px 18px 48px`
 Inner: `max-width: 920px; margin: 0 auto; text-align: center`
 
 - **Section title:** Write: "Businesses already running smoother."
@@ -177,22 +177,22 @@ Inner: `max-width: 920px; margin: 0 auto; text-align: center`
 
 4 testimonial cards. Each:
 - Label color: `#34c759`, `#0a84ff`, `#af52de`, `#ff9f0a`
-- Label text: a specific business outcome (e.g. LAPORAN OTOMATIS, STOK SELALU AKURAT, HEMAT 3 JAM/HARI)
+- Label text: a specific business outcome (e.g. AUTOMATED REPORTS, ALWAYS-ACCURATE STOCK, SAVES 3 HRS/DAY)
 - Photo container: use `https://placehold.co/290x387` — represents a screenshot of the user's app dashboard or a photo of the business owner at work
 - Quote: 4 authentic first-person quotes. Each must: mention a specific time saved or business problem solved, express surprise at how simple it was, sound like a real SME owner. Use the brand tone.
-- Name: — [Common Indonesian first name], [business type e.g. pemilik warung makan, reseller skincare]
+- Name: — [Common first name], [business type e.g. restaurant owner, skincare reseller]
 
 ---
 
 Below cards: Write 1 sentence about the variety of business types using this software.
 
-CTA button → `href="#kenapa-gagal"` — Write a question pointing to why spreadsheets and manual methods fail.
+CTA button → `href="#why-it-fails"` — Write a question pointing to why spreadsheets and manual methods fail.
 
 ---
 
 ### SECTION 4 — PROBLEM REFRAME (dark background #0b0c10)
 
-`id="kenapa-gagal"` · `padding: 52px 18px` · `color: #fff`
+`id="why-it-fails"` · `padding: 52px 18px` · `color: #fff`
 Inner: `max-width: 820px; margin: 0 auto; text-align: center`
 
 - **H2:** Write 2 lines: Line 1 — empathetic reframe ("Still managing your business in spreadsheets?"), Line 2 with `.grad` — the real cause ("You're spending hours on the wrong thing.").
@@ -211,13 +211,13 @@ Badge: write "WITH THIS APP"
 
 - **Note:** Write 1–2 sentences: product name + user count + what type of businesses are using it.
 
-CTA button → `href="#fitur"` — Write "See All Features" equivalent.
+CTA button → `href="#features"` — Write "See All Features" equivalent.
 
 ---
 
 ### SECTION 5 — FEATURES (light background)
 
-`id="fitur"` · `padding: 48px 18px`
+`id="features"` · `padding: 48px 18px`
 Inner: `max-width: 820px; margin: 0 auto; text-align: center`
 
 - **H2:** Write: "Everything You Need" on line 1, then "In One App" on line 2 wrapped in `.grad`.
@@ -325,19 +325,19 @@ Note: Write: "Cancel anytime. No long-term commitment."
 
 ### SECTION 7 — PROOF / SCREENSHOTS & METRICS (light background)
 
-`id="bukti"` · `padding: 48px 18px`
+`id="proof"` · `padding: 48px 18px`
 Inner: `max-width: 900px; margin: 0 auto`
 
 - **H2 (centered):** Write: "Not Promises." in plain text + `.grad` span: "Real User Results."
 
 **Intro block (centered):**
-- Gradient kicker text: Write user metric from variables (e.g. "10.000+ Bisnis Aktif · Rating 4.8/5")
+- Gradient kicker text: Write user metric from variables (e.g. "10,000+ Active Businesses · 4.8/5 Rating")
 - Gradient heading: Write "What Businesses Are Achieving with [Product Name]"
 - Paragraph: Write "Dashboard screenshots, report previews, and metrics from real users."
 
 **Horizontal scroll card slider:**
 
-Each `.bukti-card` — same structure as Template A/B.
+Each `.proof-card` — same structure as Template A/B.
 
 Image area represents: dashboard screenshots, report previews, transaction logs, mobile app views.
 
@@ -347,7 +347,7 @@ Write 6 proof cards:
 3. Stock accuracy — title: e.g. "Zero Stock Discrepancies Since Month 1" / subtitle: "Real-time sync across all channels"
 4. User count — title: e.g. "[user count] Businesses Trust This App" / subtitle: "Across retail, F&B, and service industries"
 5. App store rating — title: "⭐ 4.8/5 App Store Rating" / subtitle: "[review count] verified reviews — consistently top-rated"
-6. Integration working — title: e.g. "Shopee & GoPay Auto-Sync" / subtitle: "Every online sale recorded automatically"
+6. Integration working — title: e.g. "Shopify & Stripe Auto-Sync" / subtitle: "Every online sale recorded automatically"
 
 Scroll hint: "Swipe left/right to see more."
 
@@ -360,7 +360,7 @@ Scroll hint: "Swipe left/right to see more."
 
 ### SECTION 8 — EMOTIONAL CLOSE / DREAM STATE (dark background #000)
 
-`id="impian"` · `padding: 52px 18px` · `overflow: hidden` · `color: #fff`
+`id="dream"` · `padding: 52px 18px` · `overflow: hidden` · `color: #fff`
 Inner: `max-width: 640px; margin: 0 auto; text-align: center`
 
 - **Kicker:** Write: e.g. "Starting From Today"
@@ -414,10 +414,10 @@ Same HTML structure and CSS as Template A.
 ```js
 (function () {
   var names = [
-    'Sinta','Dewi','Rina','Nadia','Aulia','Fitri','Putri','Indah','Maya','Laila',
-    'Rizal','Dimas','Hendra','Agus','Bayu','Andi','Fajar','Irfan','Johan','Reza',
-    'Suci','Tiara','Winda','Ayu','Intan','Nurul','Salsa','Yuni','Zahra','Anisa',
-    'Iqbal','Randy','Rian','Galih','Bima','Arya','Gilang','Ilham','Naufal','Ridho'
+    'Emma','Olivia','Sophia','Mia','Chloe','Grace','Lily','Hannah','Zoe','Ella',
+    'James','Liam','Noah','Ethan','Lucas','Daniel','Ryan','Adam','Leo','Sam',
+    'Sarah','Anna','Julia','Laura','Nina','Maya','Lena','Clara','Aria','Nora',
+    'David','Alex','Ben','Max','Oscar','Jack','Kai','Owen','Eli','Theo'
   ];
   var product = ''; // Short product name from variables
   var popup = document.getElementById('salesPopup');
@@ -452,5 +452,5 @@ Same HTML structure and CSS as Template A.
 - All same-page navigation: `href="#section-id"` anchor links with `scroll-behavior: smooth`
 - Images without real URLs: use `https://placehold.co/[width]x[height]`
 - `loading="lazy"` on all images below the fold
-- Section IDs must match exactly: `hero`, `produk`, `testimoni-awal`, `kenapa-gagal`, `fitur`, `pricing`, `bukti`, `impian`, `faq`
+- Section IDs must match exactly: `hero`, `product`, `early-testimonials`, `why-it-fails`, `features`, `pricing`, `proof`, `dream`, `faq`
 - No checkout button in the pricing section — the checkout form is a separate component placed below this page

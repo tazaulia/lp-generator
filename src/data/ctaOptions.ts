@@ -1,11 +1,13 @@
+import { CUSTOM_OPTION } from './customOption';
+
 const ctaOptions = [
-  { value: "Beli Sekarang", label: "Beli Sekarang" },
-  { value: "Daftar Sekarang", label: "Daftar Sekarang" },
-  { value: "Gabung Sekarang", label: "Gabung Sekarang" },
-  { value: "Download Sekarang", label: "Download Sekarang" },
-  { value: "Amankan Slot", label: "Amankan Slot" },
-  { value: "Mulai Sekarang", label: "Mulai Sekarang" },
-  { value: "Isi Manual", label: "Isi Manual (Ketik Sendiri)" },
+  { value: "Buy Now", label: "Buy Now" },
+  { value: "Sign Up Now", label: "Sign Up Now" },
+  { value: "Join Now", label: "Join Now" },
+  { value: "Download Now", label: "Download Now" },
+  { value: "Secure Your Spot", label: "Secure Your Spot" },
+  { value: "Get Started", label: "Get Started" },
+  { value: CUSTOM_OPTION, label: CUSTOM_OPTION },
 ] as const;
 
 export default ctaOptions;

@@ -13,7 +13,7 @@ export default function Header() {
             </svg>
           </div>
           <span className="text-lg font-bold text-slate-800 dark:text-slate-100">
-            LP Generator <span className="text-brand-500">V2</span>
+            LP Generator
           </span>
         </div>
         <button

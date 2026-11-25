@@ -1,9 +1,8 @@
-# LP Generator V2
+# LP Generator
 
-**Owner:** Taza (Taftazani Aulia) — Indonesian nutrition coach based in Singapore, running Taza Nutrition / Yudis Venture.
+**Owner:** Taza (Taftazani Aulia) — digital product builder and nutritionist based in Singapore.
 
-**Live app:** Deployed via Vercel (GitHub → Vercel auto-deploy)  
-**V1 (predecessor):** https://cuanmania.vercel.app
+**Live app:** https://profitmania.taza.me (GitHub → Vercel auto-deploy)
 
 ---
 
@@ -11,14 +10,14 @@
 
 A React form app that generates a ~600-line prescriptive HTML prompt — one per business type. User fills the form, copies the prompt, pastes into Z.AI, gets a complete single-file HTML landing page.
 
-**Why V2 beats V1:** V1 prompts are descriptive ("build a page with these sections"). V2 prompts encode every CSS value, JS pattern, and layout decision so Z.AI only decides what copy to write. Output looks designed, not AI-generated.
+**Why it works:** the prompts don't just describe a page ("build a page with these sections") — they encode every CSS value, JS pattern, and layout decision, so Z.AI only decides what copy to write. Output looks designed, not AI-generated. All UI text and generated page copy are in English.
 
 ---
 
 ## Project structure
 
 ```
-lp-generator-v2/
+lp-generator/
 ├── src/
 │   ├── templates/
 │   │   ├── base.ts                  ← ~600-line shared prompt with {{placeholders}}
@@ -35,11 +34,11 @@ lp-generator-v2/
 │   │   ├── colorPaletteOptions.ts   ← 10 preset palettes (accent + gradient + lightBg)
 │   │   ├── accessTypeOptions.ts
 │   │   ├── programDurationOptions.ts
-│   │   ├── toneOptions.ts           ← Simplified 8 options (down from V1's 14)
+│   │   ├── toneOptions.ts           ← 8 options
 │   │   ├── ctaOptions.ts
-│   │   ├── scarcityOptions.ts       ← Reused from V1
-│   │   ├── audienceOptions.ts       ← Reused from V1
-│   │   └── awarenessOptions.ts      ← Reused from V1
+│   │   ├── scarcityOptions.ts
+│   │   ├── audienceOptions.ts
+│   │   └── awarenessOptions.ts
 │   ├── hooks/
 │   │   └── useFormState.ts          ← 16-field FormState with useReducer
 │   ├── utils/
@@ -82,7 +81,7 @@ validateForm() — checks required + conditional fields
   ↓
 selectModules(templateType) → { s5, s7, storageKey, popupVerb }
   ↓
-buildTemplate(mod) → replaces {{section5}}, {{section7}}, {{storageKey}}, {{popupVerb}}
+buildTemplate(mod) → replaces {{section5}}, {{section5Id}}, {{section7}}, {{storageKey}}, {{popupVerb}}
   ↓
 resolveColors(colorPalette) → { accent, accentRgb, gradient, lightBg }
   ↓
@@ -105,7 +104,7 @@ User copies prompt → pastes into Z.AI → gets single-file HTML
 | `keySellingPoints` | string | ✓ | Core promise + 3–5 differentiators |
 | `programDuration` | dropdown | A only | 4/6/8/12 Minggu etc. |
 | `programDurationCustom` | string | if "Lainnya" | Free text |
-| `price` | string | ✓ | e.g. "Rp 299.000" |
+| `price` | string | ✓ | e.g. "$49" |
 | `originalPrice` | string | — | Crossed-out price |
 | `accessType` | dropdown | ✓ | Lifetime / Monthly / etc. |
 | `ctaText` | dropdown | ✓ | 7 options + custom |
@@ -186,7 +185,7 @@ npm run build    # production build
 ## Key constraints (do not change without understanding consequences)
 
 1. **localStorage keys per template** — changing resets countdown timers for existing visitors
-2. **Section IDs in generated HTML** — anchor links throughout the page depend on them
+2. **Section IDs in generated HTML** — anchor links throughout the page depend on them. Shared ids live in `base.ts`; each module's `section5Id` must match the `id` its `s5` declares (base links such as "See What's Inside" use `#{{section5Id}}`)
 3. **`base.ts` placeholder names** — must match keys in `interpolate.ts` `values` object exactly
 4. **3 breakpoints only** (480/640/840px) — all responsive rules are tuned to these
 5. **`colorPaletteOptions.ts`** — the `value` field is the key used by `resolveColors()`, don't rename

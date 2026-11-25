@@ -8,12 +8,12 @@ interface Template {
 }
 
 const templates: Template[] = [
-  { type: 'A', emoji: '🎓', label: 'Kursus / Coaching', examples: 'Online course, bootcamp, 1:1 coaching' },
-  { type: 'B', emoji: '📦', label: 'Produk Digital', examples: 'Ebook, template pack, toolkit, resource pack' },
-  { type: 'C', emoji: '🏢', label: 'Agency / Jasa', examples: 'Freelance, done-for-you, retainer, konsultasi' },
-  { type: 'D', emoji: '🛍️', label: 'Produk Fisik', examples: 'Skincare, suplemen, F&B, fashion, wellness' },
+  { type: 'A', emoji: '🎓', label: 'Course / Coaching', examples: 'Online course, bootcamp, 1:1 coaching' },
+  { type: 'B', emoji: '📦', label: 'Digital Product', examples: 'Ebook, template pack, toolkit, resource pack' },
+  { type: 'C', emoji: '🏢', label: 'Agency / Services', examples: 'Freelance, done-for-you, retainer, consulting' },
+  { type: 'D', emoji: '🛍️', label: 'Physical Product', examples: 'Skincare, supplements, food & beverage, fashion, wellness' },
   { type: 'E', emoji: '💻', label: 'SaaS / Software', examples: 'Web app, mobile app, plugin, dashboard' },
-  { type: 'F', emoji: '🎤', label: 'Event / Webinar', examples: 'Live webinar, workshop offline, hybrid event' },
+  { type: 'F', emoji: '🎤', label: 'Event / Webinar', examples: 'Live webinar, in-person workshop, hybrid event' },
 ];
 
 interface Props {
@@ -25,7 +25,7 @@ export default function SectionTemplateType({ value, onChange }: Props) {
   return (
     <div>
       <p className="text-xs text-slate-400 dark:text-slate-500 mb-4">
-        Pilih tipe bisnis. Ini menentukan struktur konten yang akan dihasilkan.
+        Choose your business type. It sets the content structure of the generated page.
       </p>
       <div className="grid grid-cols-2 gap-3">
         {templates.map((t) => {

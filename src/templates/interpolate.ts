@@ -1,6 +1,7 @@
 import type { FormState } from '../hooks/useFormState';
 import colorPaletteOptions from '../data/colorPaletteOptions';
 import fallbacks from '../utils/fallbacks';
+import { CUSTOM_OPTION } from '../data/customOption';
 
 export interface ResolvedColors {
   accent: string;
@@ -29,25 +30,25 @@ export function resolveColors(paletteValue: string): ResolvedColors {
 }
 
 export function interpolate(template: string, state: FormState, colors: ResolvedColors): string {
-  const ctaText = state.ctaText === 'Isi Manual (Ketik Sendiri)'
+  const ctaText = state.ctaText === CUSTOM_OPTION
     ? state.ctaCustom
     : state.ctaText;
 
-  const targetAudience = state.targetAudience === 'Lainnya (Isi Manual)'
+  const targetAudience = state.targetAudience === CUSTOM_OPTION
     ? state.targetAudienceCustom
     : state.targetAudience;
 
-  const programDuration = state.programDuration === 'Lainnya (Isi Manual)'
+  const programDuration = state.programDuration === CUSTOM_OPTION
     ? state.programDurationCustom
     : state.programDuration;
 
   const programDurationLine = programDuration
-    ? `- **Durasi Program:** ${programDuration}`
+    ? `- **Program duration:** ${programDuration}`
     : '';
 
   const painPoints = state.painPoints.trim() || fallbacks.painPoints;
   const objections = state.objections.trim() || fallbacks.objections;
-  const originalPrice = state.originalPrice.trim() || 'Tidak disebutkan';
+  const originalPrice = state.originalPrice.trim() || 'Not specified';
 
   const values: Record<string, string> = {
     brandProductName: state.brandProductName,

@@ -6,13 +6,13 @@ export default function HeroSection() {
           Landing Page Builder
         </div>
         <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-slate-100 leading-tight">
-          Buat Landing Page Professional{' '}
+          Build a Professional Landing Page{' '}
           <br className="hidden sm:block" />
-          dalam <span className="text-brand-500">Hitungan Menit</span>
+          in <span className="text-brand-500">Minutes</span>
         </h1>
         <p className="mt-3 text-slate-500 dark:text-slate-400 text-sm sm:text-base max-w-lg mx-auto">
-          Generate struktur copywriting yang menjual (High Converting) dan layout
-          yang sesuai format.
+          Generate high-converting copy and a ready-made page layout, tailored
+          to your type of business.
         </p>
       </div>
     </section>

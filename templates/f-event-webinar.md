@@ -11,18 +11,18 @@ Fill in the values below. The rest of the prompt uses them to generate the full 
 - **Organizer / Company name:** [e.g. Yudis Venture / Taza Nutrition]
 - **Event name:** [e.g. Scale Up Business Summit 2025]
 - **Event type:** [e.g. Live Webinar / In-Person Workshop / Hybrid Conference]
-- **Event date & time:** [e.g. Sabtu, 14 Juni 2025 · 09.00–17.00 WIB]
-- **Venue (if in-person or hybrid):** [e.g. Hotel Raffles Jakarta, Ballroom A — or "Online via Zoom" if online-only]
+- **Event date & time:** [e.g. Saturday, June 14, 2025 · 9:00 AM–5:00 PM]
+- **Venue (if in-person or hybrid):** [e.g. Grand Hotel, Ballroom A — or "Online via Zoom" if online-only]
 - **Core outcome promise:** [e.g. walk away with a repeatable client acquisition system you can implement the next day]
 - **Key differentiators (3):** [e.g. practitioner-led (not theory), live Q&A with speakers, all recordings included]
 - **Speaker 1 — Name, Title, Company:** [e.g. Andi Saputra · Co-Founder · GrowthID]
 - **Speaker 2 — Name, Title, Company:** [e.g. Mira Handayani · CMO · TokoBesar.co]
-- **Speaker 3 — Name, Title, Company:** [e.g. Rizal Firmansyah · Digital Strategist · Meta Indonesia]
+- **Speaker 3 — Name, Title, Company:** [e.g. Rizal Firmansyah · Digital Strategist · Meta]
 - **Social proof metric:** [e.g. 3,000+ alumni from 18 past events, avg. rating 4.9/5]
-- **Ticket price:** [e.g. Rp 299.000]
-- **Original / crossed-out price:** [e.g. Rp 799.000]
+- **Ticket price:** [e.g. $79]
+- **Original / crossed-out price:** [e.g. $199]
 - **Access type:** [e.g. One-time payment — includes live session + replay access for 30 days]
-- **Language:** [e.g. Indonesian (Bahasa Indonesia) — use "kamu" not "Anda"]
+- **Language:** [e.g. English — friendly, second person ("you")]
 - **Tone:** [e.g. energetic, credible, urgency-driven — this is a live event with a hard deadline]
 - **Accent color:** [e.g. #0a84ff]
 - **Gradient (3 stops):** [e.g. linear-gradient(135deg, #0a84ff, #5ac8fa, #64d2ff)]
@@ -119,8 +119,8 @@ Write 3 speaker pills using Speaker 1, 2, and 3 from variables.
 Below strip: `font-size: 11px; color: rgba(0,0,0,.42); font-weight: 600; text-align: center; margin-top: 6px`
 Write: "[Event date & time] · [Venue]"
 
-**1e. CTA button** → `href="#acara"`
-Write a curiosity-driven question asking what the event is about — conversational, not pushy (e.g. "Apa yang Akan Kamu Dapatkan di Event Ini?")
+**1e. CTA button** → `href="#event"`
+Write a curiosity-driven question asking what the event is about — conversational, not pushy (e.g. "What Will You Get from This Event?")
 
 Below button — hint text: `font-size: 12px; color: rgba(0,0,0,.42); margin-top: 10px`
 Write a soft 8–10 word nudge: read first, then decide if it's right for you.
@@ -161,7 +161,7 @@ Write 4 short benefit statements: (1) practitioner speakers — not motivators o
 
 ### SECTION 2 — WHAT IS THIS EVENT? (dark background #000)
 
-`id="acara"` · `padding: 52px 18px` · `color: #fff`
+`id="event"` · `padding: 52px 18px` · `color: #fff`
 Inner: `max-width: 560px; margin: 0 auto; text-align: center`
 
 - **Title:** `font-size: 28px; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 14px`
@@ -177,7 +177,7 @@ Inner: `max-width: 560px; margin: 0 auto; text-align: center`
   Write 4 credibility bullets covering: (1) the organizer name + how many past events they've run + total alumni, (2) every speaker is an active practitioner with real case studies — not a motivational speaker, (3) structured for immediate application — each session ends with a clear action step, (4) the event is designed for people who've attended free webinars and gotten nothing actionable.
 
 - **Two CTA buttons** — `display: flex; gap: 14px; justify-content: center; flex-wrap: wrap`
-  - Ghost/outline button → `href="#testimoni-awal"` — Write "See What Past Attendees Say" equivalent
+  - Ghost/outline button → `href="#early-testimonials"` — Write "See What Past Attendees Say" equivalent
   - Filled accent button → `href="#agenda"` — Write "See the Full Agenda" equivalent
 
   Ghost style: `background: transparent; color: [accent]; border: 1px solid rgba([accent rgb], .6)` — hover fills accent solid
@@ -187,7 +187,7 @@ Inner: `max-width: 560px; margin: 0 auto; text-align: center`
 
 ### SECTION 3 — EARLY TESTIMONIALS (light background)
 
-`id="testimoni-awal"` · `padding: 40px 18px 48px`
+`id="early-testimonials"` · `padding: 40px 18px 48px`
 Inner: `max-width: 920px; margin: 0 auto; text-align: center`
 
 - **Section title:** `font-size: 24px; font-weight: 800; letter-spacing: -0.022em; margin-bottom: 6px`
@@ -216,20 +216,20 @@ Use `https://placehold.co/290x387` for each.
 Write 4 authentic first-person quotes from past attendees. Each quote must: mention a specific result they got after attending, express surprise that it was more practical than expected, sound like a real person (not marketing copy). Use the brand tone.
 
 **Name:** `font-size: 12px; color: rgba(0,0,0,.52)`
-Write: — [Common Indonesian first name, and their business or role]
+Write: — [Common first name, and their business or role]
 
 ---
 
 Below cards: `font-size: 11px; color: rgba(0,0,0,.42); margin: 16px 0 22px`
-Write 1 sentence: this event has helped people across different business types and stages — name 2–3 attendee personas (e.g. freelancer, UMKM owner, aspiring entrepreneur).
+Write 1 sentence: this event has helped people across different business types and stages — name 2–3 attendee personas (e.g. freelancer, small business owner, aspiring entrepreneur).
 
-CTA button → `href="#kenapa-gagal"` — Write a question pointing to why free content and generic seminars fail (matches next section).
+CTA button → `href="#why-it-fails"` — Write a question pointing to why free content and generic seminars fail (matches next section).
 
 ---
 
 ### SECTION 4 — PROBLEM REFRAME (dark background #0b0c10)
 
-`id="kenapa-gagal"` · `padding: 52px 18px` · `color: #fff`
+`id="why-it-fails"` · `padding: 52px 18px` · `color: #fff`
 Inner: `max-width: 820px; margin: 0 auto; text-align: center`
 
 - **H2:** `font-size: 28px` (34px ≥640px) · `font-weight: 900; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 14px`
@@ -244,15 +244,15 @@ Each card: `background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,25
 
 **Left card — SEMINAR BIASA:**
 Badge: `background: rgba(239,68,68,.14); color: #f87171; border-radius: 999px; padding: 5px 12px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px`
-Write: "SEMINAR BIASA"
+Write: "TYPICAL SEMINARS"
 
 5 items, each with a red ✕ icon circle (`background: rgba(239,68,68,.18); color: #f87171; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; font-weight: 800; flex: 0 0 auto`):
 
 Write 5 conventional seminar problems: motivational speakers with no real business behind their advice / generic slides that cover basics anyone can find on YouTube / no structured Q&A — only one-way presentation / inspiration fades within 48 hours with nothing to implement / expensive tickets with no replay if you miss a session
 
-**Right card — EVENT INI:**
+**Right card — THIS EVENT:**
 Badge: `background: rgba([accent rgb], .18); color: #60a5fa; border-radius: 999px` — same size/style
-Write: "EVENT INI"
+Write: "THIS EVENT"
 
 5 items with blue ✓ icon circle (`background: rgba([accent rgb], .22); color: #60a5fa`):
 
@@ -284,7 +284,7 @@ Each `.agenda-card`: `background: #fff; border-radius: 20px; padding: 20px 18px;
 
 Each card contains:
 - **Time slot badge:** `display: inline-flex; align-items: center; gap: 6px; background: rgba([accent rgb], .08); color: [accent]; border-radius: 999px; font-size: 11px; font-weight: 700; padding: 4px 10px; margin-bottom: 12px`
-  — Contains a small clock SVG icon (14×14px, accent color stroke) + time slot text (e.g. "09.00 – 10.30")
+  — Contains a small clock SVG icon (14×14px, accent color stroke) + time slot text (e.g. "9:00 – 10:30")
 - **Format pill:** float right or flex alongside time badge — `background: rgba(0,0,0,.05); color: rgba(0,0,0,.55); border-radius: 999px; font-size: 10px; font-weight: 700; padding: 3px 8px; letter-spacing: .04em; text-transform: uppercase`
   — Write format: "TALK" / "WORKSHOP" / "PANEL" / "FIRESIDE"
 - **Session title:** `font-size: 16px; font-weight: 800; color: #0b0b0f; letter-spacing: -0.01em; margin-bottom: 6px`
@@ -424,7 +424,7 @@ On ≤480px: `padding: 14px 14px 18px; border-radius: 18px` and timer `font-size
 
 ### SECTION 7 — SPEAKERS / EVIDENCE (light background)
 
-`id="bukti"` · `padding: 48px 18px`
+`id="proof"` · `padding: 48px 18px`
 Inner: `max-width: 900px; margin: 0 auto`
 
 - **H2 (centered):** `font-size: 28px` (32px ≥640px) · `font-weight: 900; letter-spacing: -0.022em; line-height: 1.2; margin-bottom: 10px`
@@ -439,7 +439,7 @@ Inner: `max-width: 900px; margin: 0 auto`
 **Horizontal scroll card slider:**
 `display: flex; gap: 14px; overflow-x: auto; padding: 6px 2px 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(0,0,0,.12) rgba(0,0,0,.04)`
 
-Each `.bukti-card`: `scroll-snap-align: start; flex: 0 0 auto; width: 300px` (340px ≥640px) · `background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 20px; box-shadow: 0 16px 50px rgba(0,0,0,.07); overflow: hidden`
+Each `.proof-card`: `scroll-snap-align: start; flex: 0 0 auto; width: 300px` (340px ≥640px) · `background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 20px; box-shadow: 0 16px 50px rgba(0,0,0,.07); overflow: hidden`
 
 Image area: `aspect-ratio: 5/3; background: rgba(0,0,0,.04)` — img `object-fit: cover; width: 100%; height: 100%` — use `https://placehold.co/340x204`
 
@@ -458,7 +458,7 @@ Write 6 proof cards:
 2. **Speaker 2 profile** — same format with Speaker 2 data
 3. **Speaker 3 profile** — same format with Speaker 3 data
 4. **Past event attendance** — title: "[X]+ Attendees" (gradient) / subtitle: "Across [N] past editions · [avg. rating]/5 average rating — read what they said"
-5. **Alumni result** — title: specific business result from a past attendee (e.g. "Rp 200jt Revenue in 60 Days") / subtitle: real outcome from attending a previous edition of this event
+5. **Alumni result** — title: specific business result from a past attendee (e.g. "$20K Revenue in 60 Days") / subtitle: real outcome from attending a previous edition of this event
 6. **Repeat attendance** — title: "[X]% Return Attendee Rate" (gradient) / subtitle: "Past attendees who came back for the next edition — the highest proof of value"
 
 Scroll hint: `font-size: 12px; color: rgba(0,0,0,.4); font-weight: 600; text-align: center; margin-top: 8px` — "Swipe to see all speakers and proof."
@@ -473,11 +473,11 @@ Scroll hint: `font-size: 12px; color: rgba(0,0,0,.4); font-weight: 600; text-ali
 
 ### SECTION 8 — EMOTIONAL CLOSE / DREAM STATE (dark background #000)
 
-`id="impian"` · `padding: 52px 18px` · `overflow: hidden` · `color: #fff`
+`id="dream"` · `padding: 52px 18px` · `overflow: hidden` · `color: #fff`
 Inner: `max-width: 640px; margin: 0 auto; text-align: center`
 
 - **Kicker:** `font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: [accent]; margin-bottom: 18px; display: inline-block`
-  Write: the event date from variables (e.g. "14 Juni 2025")
+  Write: the event date from variables (e.g. "June 14, 2025")
 
 - **H2:** `font-size: 32px` (40px ≥640px) · `font-weight: 900; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 14px`
   Write 2 lines: "Picture Yourself in" / ".grad span: The Room That Changes Things."
@@ -489,7 +489,7 @@ Inner: `max-width: 640px; margin: 0 auto; text-align: center`
 Container: `max-width: 900px; margin: 0 auto 40px; overflow: hidden`
 On ≤640px: full viewport width.
 
-Inner `.impian-track`: `display: flex; gap: 14px; width: max-content; animation: marqueeScroll 28s linear infinite`
+Inner `.dream-track`: `display: flex; gap: 14px; width: max-content; animation: marqueeScroll 28s linear infinite`
 
 Each image: `width: 180px; aspect-ratio: 4/5; border-radius: 18px; background: #1a1a1a center/cover no-repeat; flex: 0 0 auto; box-shadow: 0 16px 40px rgba(0,0,0,.5)` — use 5 placeholder images (`https://placehold.co/180x225`) showing energized attendees, speaker on stage, group discussions, networking moments. Duplicate for seamless loop.
 
@@ -507,7 +507,7 @@ Write: "— From an attendee of a past edition"
 **Transition question:** `font-size: 17px; font-weight: 700; color: rgba(255,255,255,.82); margin-bottom: 28px; line-height: 1.5`
 Write a single final binary question: keep figuring it out alone, or spend one day with practitioners who've already solved it? Make it feel like a natural, friendly decision point — not pressure.
 
-**CTA button** → `href="#pricing"` — Write a strong first-person "yes" — e.g. "Yes, Saya Mau Ikut!"
+**CTA button** → `href="#pricing"` — Write a strong first-person "yes" — e.g. "Yes, I'm In!"
 
 **Note below CTA:** `font-size: 12px; color: rgba(255,255,255,.35); margin-top: 12px; font-weight: 600`
 Write: ticket price from variables · One-time payment · Includes replay + materials
@@ -550,7 +550,7 @@ Write 9 FAQ items covering these topics in order:
 4. **What if I can't attend live?** — The full recording is included with every ticket and available for 30 days post-event. Slide decks and action checklists are sent to all registered attendees regardless of live attendance.
 5. **How do I get the recording and materials?** — After registration, you'll receive a confirmation email with access details. Materials are delivered digitally — no physical shipping.
 6. **Is this a one-time payment or recurring?** — One-time ticket purchase. No subscriptions, no monthly fees, no hidden charges.
-7. **Are the sessions in Indonesian?** — All sessions are conducted in Bahasa Indonesia. Slides may contain English terms where industry-standard, but all explanations are in Indonesian.
+7. **What language are the sessions in?** — All sessions are conducted in English, with slides and materials in English.
 8. **Who are the speakers and can I trust their credentials?** — List Speaker 1, 2, and 3 from variables with their title and company. State that every speaker was selected based on active, verifiable results — not a speaker bureau or an agent. Mention the organizer's past event track record (social proof metric from variables).
 9. **Is there a refund policy?** — Tickets are non-refundable once purchased due to the digital nature of the access (recording + materials are delivered immediately after registration). Seats can be transferred to another person by emailing the organizer before the event date.
 
@@ -592,10 +592,10 @@ On ≤480px: `left: 10px; right: 10px; bottom: 10px; max-width: none` and card `
 (function () {
   var names = [
     // Write 40 common local first names — mixed male and female
-    // Example for Indonesian: 'Sinta','Dewi','Rina','Nadia','Aulia','Fitri','Putri','Indah','Maya','Laila',
-    // 'Rizal','Dimas','Hendra','Agus','Bayu','Andi','Fajar','Irfan','Johan','Reza',
-    // 'Suci','Tiara','Winda','Ayu','Intan','Nurul','Salsa','Yuni','Zahra','Anisa',
-    // 'Iqbal','Randy','Rian','Galih','Bima','Arya','Gilang','Ilham','Naufal','Ridho'
+    // Example: 'Emma','Olivia','Sophia','Mia','Chloe','Grace','Lily','Hannah','Zoe','Ella',
+    // 'James','Liam','Noah','Ethan','Lucas','Daniel','Ryan','Adam','Leo','Sam',
+    // 'Sarah','Anna','Julia','Laura','Nina','Maya','Lena','Clara','Aria','Nora',
+    // 'David','Alex','Ben','Max','Oscar','Jack','Kai','Owen','Eli','Theo'
     // Generate your own 40 names appropriate to the target audience.
   ];
   var product = ''; // Short event name from variables
@@ -631,5 +631,5 @@ On ≤480px: `left: 10px; right: 10px; bottom: 10px; max-width: none` and card `
 - All same-page navigation: `href="#section-id"` anchor links with `scroll-behavior: smooth`
 - Images without real URLs: use `https://placehold.co/[width]x[height]`
 - `loading="lazy"` on all images below the fold (all except hero speaker strip photos)
-- Section IDs must match exactly: `hero`, `acara`, `testimoni-awal`, `kenapa-gagal`, `agenda`, `pricing`, `bukti`, `impian`, `faq`
+- Section IDs must match exactly: `hero`, `event`, `early-testimonials`, `why-it-fails`, `agenda`, `pricing`, `proof`, `dream`, `faq`
 - No checkout button in the pricing section — the checkout form is a separate component placed below this page

@@ -1,6 +1,6 @@
 const fallbacks = {
-  painPoints: 'Tidak dispesifikan — harap riset mandiri sebelum mengisi.',
-  objections: 'Umum (Harga / Waktu / Kepercayaan). Gunakan untuk panduan bagian FAQ.',
+  painPoints: 'Not specified — infer the most likely pain points for this audience.',
+  objections: 'General (price / time / trust). Use as guidance for the FAQ section.',
 };
 
 export default fallbacks;

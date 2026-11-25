@@ -1,11 +1,12 @@
-# LP Generator v2 — Claude Context
+# LP Generator — Claude Context
 
 ## What this project is
 
 A **React form app** (Vite + TypeScript + Tailwind CSS 4) that generates a ~600-line prescriptive HTML prompt — one per business type. User fills the 7-step form, copies the prompt, pastes into Z.AI, and gets a complete single-file HTML landing page.
 
-**Owner:** Taza (Taftazani Aulia), Yudis Venture / Taza Nutrition  
-**Live:** Deployed via Vercel (GitHub → auto-deploy)  
+**Owner:** Taza (Taftazani Aulia)  
+**Live:** https://profitmania.taza.me (Vercel, GitHub → auto-deploy)  
+**Language:** All UI text and generated page copy are English, with no country-specific references.  
 **Status:** All 6 templates complete (A–F). All form components built. App is functional.
 
 ---
@@ -13,7 +14,7 @@ A **React form app** (Vite + TypeScript + Tailwind CSS 4) that generates a ~600-
 ## File map
 
 ```
-lp-generator-v2/
+lp-generator/
 ├── readme.md                    ← Full context, design decisions, usage guide
 ├── templates/                   ← Human-readable markdown source (all 6 complete)
 │   ├── a-digital-course.md
@@ -35,6 +36,7 @@ lp-generator-v2/
     │       ├── typeE.ts         ← SaaS: S5=feature grid, S7=dashboard screenshots
     │       └── typeF.ts         ← Event: S5=agenda, S7=speaker profiles
     ├── data/
+    │   ├── customOption.ts          ← CUSTOM_OPTION: the "Other (type your own)" dropdown value
     │   ├── colorPaletteOptions.ts   ← 10 preset palettes
     │   ├── accessTypeOptions.ts
     │   ├── programDurationOptions.ts
@@ -75,7 +77,7 @@ lp-generator-v2/
 FormState (20 fields)
   ↓ validateForm()
   ↓ selectModules(templateType) → { s5, s7, storageKey, popupVerb }
-  ↓ buildTemplate(mod)          → base.ts with {{section5}}, {{section7}} filled
+  ↓ buildTemplate(mod)          → base.ts with {{section5}}, {{section5Id}}, {{section7}} filled
   ↓ resolveColors(colorPalette) → { accent, accentRgb, gradient, lightBg }
   ↓ interpolate(template, state, colors) → final ~600-line prompt
   ↓ OutputPanel displays with 1500ms typewriter
@@ -102,7 +104,7 @@ FormState (20 fields)
 ## Hard constraints (do not change without understanding consequences)
 
 1. **localStorage keys per template** — changing resets countdown timers for existing visitors
-2. **Section `id` attributes in generated HTML** — anchor links throughout page depend on them
+2. **Section `id` attributes in generated HTML** — anchor links throughout page depend on them; each module's `section5Id` must match the `id` in its `s5`
 3. **`base.ts` placeholder names** — must match keys in `interpolate.ts` `values` object exactly
 4. **3 breakpoints only:** 480px, 640px, 840px — all responsive rules tuned to these
 5. **`colorPaletteOptions.ts` `value` field** — used as key by `resolveColors()`, don't rename

@@ -1,8 +1,8 @@
 const scarcityOptions = [
-  { value: "Tidak Ada", label: "Tidak Ada" },
+  { value: "None", label: "None" },
   { value: "Real Timer (Countdown)", label: "Real Timer (Countdown)" },
-  { value: "Quantity Left (Sisa Slot/Stok)", label: "Quantity Left (Sisa Slot/Stok)" },
-  { value: "Harga Naik Segera", label: "Harga Naik Segera" },
+  { value: "Quantity Left (Slots/Stock Remaining)", label: "Quantity Left (Slots/Stock Remaining)" },
+  { value: "Price Going Up Soon", label: "Price Going Up Soon" },
 ] as const;
 
 export default scarcityOptions;

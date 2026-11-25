@@ -5,6 +5,7 @@ import awarenessOptions from '../../data/awarenessOptions';
 import audienceOptions from '../../data/audienceOptions';
 import toneOptions from '../../data/toneOptions';
 import type { FormState, FormAction } from '../../hooks/useFormState';
+import { CUSTOM_OPTION } from '../../data/customOption';
 
 interface Props {
   state: FormState;
@@ -17,40 +18,40 @@ export default function SectionAudience({ state, dispatch, errors }: Props) {
   const set = (field: keyof FormState) => (value: string) =>
     dispatch({ type: 'SET_FIELD', field, value });
 
-  const showAudienceCustom = state.targetAudience === 'Lainnya (Isi Manual)';
+  const showAudienceCustom = state.targetAudience === CUSTOM_OPTION;
 
   return (
     <div className="space-y-4">
       <GroupedDropdown
-        label="Level Awareness Audiens"
+        label="Audience Awareness Level"
         value={state.awarenessLevel}
         onChange={set('awarenessLevel')}
         options={[...awarenessOptions]}
         required
-        error={errors.includes('Level Awareness')}
+        error={errors.includes('Awareness Level')}
       />
 
       <GroupedDropdown
-        label="Target Audiens"
+        label="Target Audience"
         value={state.targetAudience}
         onChange={set('targetAudience')}
         options={[...audienceOptions]}
         required
-        error={errors.includes('Target Audiens')}
+        error={errors.includes('Target Audience')}
       />
       {showAudienceCustom && (
         <TextInput
-          label="Target Audiens (isi manual)"
+          label="Target Audience (custom)"
           value={state.targetAudienceCustom}
           onChange={set('targetAudienceCustom')}
-          placeholder="Cth: Ibu menyusui yang ingin turun berat badan"
+          placeholder="e.g. New moms who want to lose weight"
           required
-          error={errors.includes('Target Audiens (isi manual)')}
+          error={errors.includes('Target Audience (custom)')}
         />
       )}
 
       <GroupedDropdown
-        label="Tone Bahasa"
+        label="Tone of Voice"
         value={state.tone}
         onChange={set('tone')}
         options={[...toneOptions]}
@@ -59,10 +60,10 @@ export default function SectionAudience({ state, dispatch, errors }: Props) {
       />
 
       <TextArea
-        label="Pain Points Audiens (opsional)"
+        label="Audience Pain Points (optional)"
         value={state.painPoints}
         onChange={set('painPoints')}
-        placeholder="Cth: Takut boncos, sudah coba banyak cara tapi gagal, tidak punya waktu extra..."
+        placeholder="e.g. Afraid of wasting money, tried everything and nothing worked, no spare time..."
         rows={2}
       />
     </div>

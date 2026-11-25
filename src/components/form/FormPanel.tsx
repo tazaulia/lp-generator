@@ -49,12 +49,12 @@ export default function FormPanel({ onGenerate, isGenerating = false }: FormPane
       setHasAttempted(false);
       onGenerate(prompt, []);
     } catch (e) {
-      onGenerate(null, ['Terjadi kesalahan saat generate prompt. Coba lagi.']);
+      onGenerate(null, ['Something went wrong while generating the prompt. Please try again.']);
     }
   };
 
   const handleReset = () => {
-    if (window.confirm('Reset semua field? Data yang sudah diisi akan hilang.')) {
+    if (window.confirm('Reset all fields? Everything you have entered will be lost.')) {
       dispatch({ type: 'RESET' });
       setHasAttempted(false);
       onGenerate(null, []);
@@ -64,7 +64,7 @@ export default function FormPanel({ onGenerate, isGenerating = false }: FormPane
   return (
     <div ref={formRef} className="space-y-6">
       {/* Step 0 — Template Type (always visible) */}
-      <FormSection number={0} title="Tipe Template" subtitle="Wajib dipilih sebelum melanjutkan" isComplete={stepCompletion[0]}>
+      <FormSection number={0} title="Template Type" subtitle="Required before you continue" isComplete={stepCompletion[0]}>
         <SectionTemplateType
           value={state.templateType}
           onChange={(type: TemplateType) => dispatch({ type: 'SET_FIELD', field: 'templateType', value: type })}
@@ -74,27 +74,27 @@ export default function FormPanel({ onGenerate, isGenerating = false }: FormPane
       {/* Steps 1–6 — only shown after templateType is selected */}
       {typeSelected && (
         <>
-          <FormSection number={1} title="Brand & Produk" isComplete={stepCompletion[1] ?? false}>
+          <FormSection number={1} title="Brand & Product" isComplete={stepCompletion[1] ?? false}>
             <SectionIdentity state={state} dispatch={dispatch} errors={activeErrors} isComplete={stepCompletion[1] ?? false} />
           </FormSection>
 
-          <FormSection number={2} title="Detail Produk" subtitle="Format dan keunggulan utama" isComplete={stepCompletion[2] ?? false}>
+          <FormSection number={2} title="Product Details" subtitle="Format and key strengths" isComplete={stepCompletion[2] ?? false}>
             <SectionProduct state={state} dispatch={dispatch} errors={activeErrors} isComplete={stepCompletion[2] ?? false} />
           </FormSection>
 
-          <FormSection number={3} title="Penawaran" subtitle="Harga, CTA, dan kelangkaan" isComplete={stepCompletion[3] ?? false}>
+          <FormSection number={3} title="Offer" subtitle="Price, CTA and scarcity" isComplete={stepCompletion[3] ?? false}>
             <SectionOffer state={state} dispatch={dispatch} errors={activeErrors} isComplete={stepCompletion[3] ?? false} />
           </FormSection>
 
-          <FormSection number={4} title="Target Audiens" subtitle="Siapa yang membaca halaman ini" isComplete={stepCompletion[4] ?? false}>
+          <FormSection number={4} title="Target Audience" subtitle="Who will read this page" isComplete={stepCompletion[4] ?? false}>
             <SectionAudience state={state} dispatch={dispatch} errors={activeErrors} isComplete={stepCompletion[4] ?? false} />
           </FormSection>
 
-          <FormSection number={5} title="Palet Warna" subtitle="Pilih satu tema warna" isComplete={stepCompletion[5] ?? false}>
+          <FormSection number={5} title="Color Palette" subtitle="Pick one color theme" isComplete={stepCompletion[5] ?? false}>
             <SectionColors state={state} dispatch={dispatch} errors={activeErrors} isComplete={stepCompletion[5] ?? false} />
           </FormSection>
 
-          <FormSection number={6} title="Deployment" subtitle="Anchor link checkout" isComplete={stepCompletion[6] ?? false}>
+          <FormSection number={6} title="Deployment" subtitle="Checkout anchor link" isComplete={stepCompletion[6] ?? false}>
             <SectionDeployment state={state} dispatch={dispatch} errors={activeErrors} isComplete={stepCompletion[6] ?? false} />
           </FormSection>
 
@@ -103,7 +103,7 @@ export default function FormPanel({ onGenerate, isGenerating = false }: FormPane
               <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
               </svg>
-              Mohon lengkapi kolom wajib: {activeErrors.join(', ')}.
+              Please complete the required fields: {activeErrors.join(', ')}.
             </div>
           )}
 

@@ -1,3 +1,5 @@
+import { CUSTOM_OPTION } from './customOption';
+
 const audienceOptions = [
   {
     group: "Marketing & Ads",
@@ -9,15 +11,15 @@ const audienceOptions = [
   {
     group: "Business",
     options: [
-      { value: "Business Owner (UMKM)", label: "Business Owner (UMKM)" },
-      { value: "Founder Startup", label: "Founder Startup" },
-      { value: "Owner Toko Offline", label: "Owner Toko Offline" },
+      { value: "Small Business Owner", label: "Small Business Owner" },
+      { value: "Startup Founder", label: "Startup Founder" },
+      { value: "Brick-and-Mortar Store Owner", label: "Brick-and-Mortar Store Owner" },
     ],
   },
   {
     group: "Commerce",
     options: [
-      { value: "Seller Marketplace", label: "Seller Marketplace" },
+      { value: "Marketplace Seller", label: "Marketplace Seller" },
       { value: "Reseller / Dropshipper", label: "Reseller / Dropshipper" },
     ],
   },
@@ -32,16 +34,16 @@ const audienceOptions = [
   {
     group: "Demographics Specific",
     options: [
-      { value: "Ibu Rumah Tangga / Moms", label: "Ibu Rumah Tangga / Moms" },
-      { value: "Pelajar / Mahasiswa", label: "Pelajar / Mahasiswa" },
-      { value: "Fresh Graduate", label: "Fresh Graduate" },
+      { value: "Stay-at-Home Parents", label: "Stay-at-Home Parents" },
+      { value: "Students", label: "Students" },
+      { value: "Fresh Graduates", label: "Fresh Graduates" },
     ],
   },
   {
     group: "Other",
     options: [
-      { value: "Umum (General Audience)", label: "Umum (General Audience)" },
-      { value: "Lainnya (Isi Manual)", label: "Lainnya (Isi Manual)" },
+      { value: "General Audience", label: "General Audience" },
+      { value: CUSTOM_OPTION, label: CUSTOM_OPTION },
     ],
   },
 ] as const;

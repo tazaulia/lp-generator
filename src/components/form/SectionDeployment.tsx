@@ -23,7 +23,7 @@ export default function SectionDeployment({ state, dispatch, errors }: Props) {
         error={errors.includes('Checkout Anchor')}
       />
       <p className="text-xs text-slate-400 dark:text-slate-500 -mt-2">
-        Anchor link yang digunakan semua tombol CTA di halaman. Default <code className="font-mono bg-slate-100 dark:bg-dark-700 px-1 rounded">#pricing</code> — ubah jika checkout form kamu ada di section lain.
+        The anchor link every CTA button on the page points to. Default <code className="font-mono bg-slate-100 dark:bg-dark-700 px-1 rounded">#pricing</code> — change it if your checkout form is in a different section.
       </p>
     </div>
   );

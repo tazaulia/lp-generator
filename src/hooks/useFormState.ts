@@ -13,21 +13,21 @@ export interface FormState {
   productFormat: string;
   keySellingPoints: string;
   programDuration: string;       // only used when templateType === 'A'
-  programDurationCustom: string; // free text when programDuration === 'Lainnya (Isi Manual)'
+  programDurationCustom: string; // free text when programDuration === CUSTOM_OPTION
 
   // Step 3 — Offer
   price: string;
   originalPrice: string;
   accessType: string;
   ctaText: string;
-  ctaCustom: string;             // free text when ctaText === 'Isi Manual (Ketik Sendiri)'
+  ctaCustom: string;             // free text when ctaText === CUSTOM_OPTION
   scarcityType: string;
   objections: string;
 
   // Step 4 — Audience
   awarenessLevel: string;
   targetAudience: string;
-  targetAudienceCustom: string;  // free text when targetAudience === 'Lainnya (Isi Manual)'
+  targetAudienceCustom: string;  // free text when targetAudience === CUSTOM_OPTION
   tone: string;
   painPoints: string;
 

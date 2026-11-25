@@ -5,6 +5,7 @@ import accessTypeOptions from '../../data/accessTypeOptions';
 import ctaOptions from '../../data/ctaOptions';
 import scarcityOptions from '../../data/scarcityOptions';
 import type { FormState, FormAction } from '../../hooks/useFormState';
+import { CUSTOM_OPTION } from '../../data/customOption';
 
 interface Props {
   state: FormState;
@@ -17,69 +18,69 @@ export default function SectionOffer({ state, dispatch, errors }: Props) {
   const set = (field: keyof FormState) => (value: string) =>
     dispatch({ type: 'SET_FIELD', field, value });
 
-  const showCtaCustom = state.ctaText === 'Isi Manual (Ketik Sendiri)';
+  const showCtaCustom = state.ctaText === CUSTOM_OPTION;
 
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-2 gap-3">
         <TextInput
-          label="Harga"
+          label="Price"
           value={state.price}
           onChange={set('price')}
-          placeholder="Cth: Rp 299.000"
+          placeholder="e.g. $49"
           required
-          error={errors.includes('Harga')}
+          error={errors.includes('Price')}
         />
         <TextInput
-          label="Harga Normal (coret)"
+          label="Original Price (crossed out)"
           value={state.originalPrice}
           onChange={set('originalPrice')}
-          placeholder="Cth: Rp 799.000"
+          placeholder="e.g. $129"
         />
       </div>
 
       <GroupedDropdown
-        label="Tipe Akses"
+        label="Access Type"
         value={state.accessType}
         onChange={set('accessType')}
         options={[...accessTypeOptions]}
         required
-        error={errors.includes('Tipe Akses')}
+        error={errors.includes('Access Type')}
       />
 
       <GroupedDropdown
-        label="Teks Tombol CTA"
+        label="CTA Button Text"
         value={state.ctaText}
         onChange={set('ctaText')}
         options={[...ctaOptions]}
         required
-        error={errors.includes('Teks CTA')}
+        error={errors.includes('CTA Text')}
       />
       {showCtaCustom && (
         <TextInput
-          label="Teks CTA (isi manual)"
+          label="CTA Text (custom)"
           value={state.ctaCustom}
           onChange={set('ctaCustom')}
-          placeholder="Cth: Daftar Sekarang Juga"
+          placeholder="e.g. Sign Me Up Today"
           required
-          error={errors.includes('Teks CTA (isi manual)')}
+          error={errors.includes('CTA Text (custom)')}
         />
       )}
 
       <GroupedDropdown
-        label="Tipe Kelangkaan / Urgensi"
+        label="Scarcity / Urgency Type"
         value={state.scarcityType}
         onChange={set('scarcityType')}
         options={[...scarcityOptions]}
         required
-        error={errors.includes('Tipe Kelangkaan')}
+        error={errors.includes('Scarcity Type')}
       />
 
       <TextArea
-        label="Keberatan Utama Pembeli (opsional)"
+        label="Main Buyer Objections (optional)"
         value={state.objections}
         onChange={set('objections')}
-        placeholder="Cth: Mahal, tidak punya waktu, takut tidak ngefek, udah pernah coba yang lain..."
+        placeholder="e.g. Too expensive, no time, worried it won't work, already tried others..."
         rows={2}
       />
     </div>

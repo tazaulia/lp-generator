@@ -1,8 +1,8 @@
 const accessTypeOptions = [
-  { value: "Akses Seumur Hidup (Bayar Sekali)", label: "Akses Seumur Hidup (Bayar Sekali)" },
-  { value: "Berlangganan Bulanan", label: "Berlangganan Bulanan" },
-  { value: "Berlangganan Tahunan", label: "Berlangganan Tahunan" },
-  { value: "Akses Terbatas (Isi Durasi)", label: "Akses Terbatas (Isi Durasi)" },
+  { value: "Lifetime Access (One-Time Payment)", label: "Lifetime Access (One-Time Payment)" },
+  { value: "Monthly Subscription", label: "Monthly Subscription" },
+  { value: "Annual Subscription", label: "Annual Subscription" },
+  { value: "Limited-Time Access (Specify Duration)", label: "Limited-Time Access (Specify Duration)" },
 ] as const;
 
 export default accessTypeOptions;

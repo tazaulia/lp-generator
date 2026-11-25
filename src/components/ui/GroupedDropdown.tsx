@@ -29,7 +29,7 @@ export default function GroupedDropdown({
   options = [],
   required = false,
   error = false,
-  placeholder = "Pilih...",
+  placeholder = "Select...",
 }: GroupedDropdownProps) {
   const isGrouped = options.length > 0 && "group" in options[0]!;
 

@@ -1,6 +1,7 @@
 export const base = `Build a single-file HTML landing page with inline CSS and vanilla JS only.
 No Tailwind, no external CSS frameworks, no external fonts.
 Output one complete \`<!DOCTYPE html>\` file.
+Write all visible page copy in English.
 
 ---
 
@@ -113,7 +114,7 @@ Flex row, centered, \`gap: 14px; margin-bottom: 8px\`:
 Below strip: \`font-size: 11px; color: rgba(0,0,0,.42); font-weight: 600; text-align: center\`
 Write: brand name · core credential or social proof metric
 
-**1e. CTA button** → \`href="#produk"\`
+**1e. CTA button** → \`href="#product"\`
 Write a curiosity-driven "what is this?" question — conversational, not pushy.
 
 Below button — hint text: \`font-size: 12px; color: rgba(0,0,0,.42); margin-top: 10px\`
@@ -155,7 +156,7 @@ Write 4 differentiator statements derived from the key selling points.
 
 ### SECTION 2 — WHAT IS THIS? (dark background #000)
 
-\`id="produk"\` · \`padding: 52px 18px\` · \`color: #fff\`
+\`id="product"\` · \`padding: 52px 18px\` · \`color: #fff\`
 Inner: \`max-width: 560px; margin: 0 auto; text-align: center\`
 
 - **Title:** \`font-size: 28px; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 14px\`
@@ -171,8 +172,8 @@ Inner: \`max-width: 560px; margin: 0 auto; text-align: center\`
   Write 4 credibility bullets: (1) track record / experience behind the product, (2) step-by-step structure that's immediately applicable, (3) built for {{targetAudience}} — not a generic solution, (4) the format advantage (digital/instant/flexible).
 
 - **Two CTA buttons** — \`display: flex; gap: 14px; justify-content: center; flex-wrap: wrap\`
-  - Ghost/outline button → \`href="#testimoni-awal"\` — Write "Lihat Testimoni Dulu"
-  - Filled accent button → \`href="#isi"\` — Write "Lihat Apa yang Ada di Dalamnya"
+  - Ghost/outline button → \`href="#early-testimonials"\` — Write "See the Testimonials First"
+  - Filled accent button → \`href="#{{section5Id}}"\` — Write "See What's Inside"
 
   Ghost style: \`background: transparent; color: {{accent}}; border: 1px solid rgba({{accentRgb}}, .6)\` — hover fills accent solid
   Filled style: \`background: {{accent}}; color: #fff; box-shadow: 0 14px 34px rgba({{accentRgb}}, .32)\`
@@ -181,14 +182,14 @@ Inner: \`max-width: 560px; margin: 0 auto; text-align: center\`
 
 ### SECTION 3 — EARLY TESTIMONIALS (light background)
 
-\`id="testimoni-awal"\` · \`padding: 40px 18px 48px\`
+\`id="early-testimonials"\` · \`padding: 40px 18px 48px\`
 Inner: \`max-width: 920px; margin: 0 auto; text-align: center\`
 
 - **Section title:** \`font-size: 24px; font-weight: 800; letter-spacing: -0.022em; margin-bottom: 6px\`
-  Write: "Mereka Sudah Membuktikannya." (or equivalent in {{tone}} tone)
+  Write: "They've Already Proven It." (or equivalent in {{tone}} tone)
 
 - **Subtitle:** \`font-size: 14px; color: rgba(0,0,0,.58); margin-bottom: 24px\`
-  Write: "Geser kiri–kanan untuk lihat hasilnya."
+  Write: "Swipe left or right to see their results."
 
 **Horizontal swipe card strip:**
 \`display: flex; gap: 16px; overflow-x: auto; padding: 6px 10px 16px; margin: 0 -10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: none\`
@@ -209,24 +210,24 @@ Use \`https://placehold.co/290x387\` for each.
 Write 4 authentic first-person quotes. Each must: mention a specific result, express surprise that it wasn't harder, sound like a real person. Tone: {{tone}}.
 
 **Name:** \`font-size: 12px; color: rgba(0,0,0,.52)\`
-Write: — [Common Indonesian first name, and their role/context]
+Write: — [Common first name, and their role/context]
 
 ---
 
 Below cards: \`font-size: 11px; color: rgba(0,0,0,.42); margin: 16px 0 22px\`
 Write 1 sentence: this has helped people across different backgrounds — name 2–3 personas matching {{targetAudience}}.
 
-CTA button → \`href="#kenapa-gagal"\` — Write a question pointing to why the conventional approach fails.
+CTA button → \`href="#why-it-fails"\` — Write a question pointing to why the conventional approach fails.
 
 ---
 
 ### SECTION 4 — PROBLEM REFRAME (dark background #0b0c10)
 
-\`id="kenapa-gagal"\` · \`padding: 52px 18px\` · \`color: #fff\`
+\`id="why-it-fails"\` · \`padding: 52px 18px\` · \`color: #fff\`
 Inner: \`max-width: 820px; margin: 0 auto; text-align: center\`
 
 - **H2:** \`font-size: 28px\` (34px ≥640px) · \`font-weight: 900; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 14px\`
-  Write 2 lines: Line 1 — empathetic reframe ("Gagal? Bukan Salahmu."), Line 2 with \`.grad\` — the real cause ("Metodenya yang Salah.").
+  Write 2 lines: Line 1 — empathetic reframe ("Failed? It's Not Your Fault."), Line 2 with \`.grad\` — the real cause ("The Method Was Wrong.").
 
 - **Subtext:** \`font-size: 15px; color: rgba(255,255,255,.65); max-width: 580px; margin: 0 auto 34px; line-height: 1.6\`
   Write 2 sentences: failure isn't about effort — it's about using methods that work against how things naturally work. The approach was the problem, not the person.
@@ -235,9 +236,9 @@ Inner: \`max-width: 820px; margin: 0 auto; text-align: center\`
 
 Each card: \`background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 20px; padding: 22px 18px; text-align: left\`
 
-**Left card — CARA LAMA:**
+**Left card — THE OLD WAY:**
 Badge: \`background: rgba(239,68,68,.14); color: #f87171; border-radius: 999px; padding: 5px 12px; font-size: 11px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 16px\`
-Write: "CARA LAMA"
+Write: "THE OLD WAY"
 
 5 items, each with a red ✕ icon circle (\`background: rgba(239,68,68,.18); color: #f87171; width: 20px; height: 20px; border-radius: 50%; font-size: 11px; font-weight: 800; flex: 0 0 auto\`):
 Write 5 conventional approach problems — the frustrating, ineffective things {{targetAudience}} has already tried.
@@ -252,7 +253,7 @@ Write the exact inverse of each problem, in the same order — the {{brandProduc
 - **Creator note:** \`font-size: 13px; color: rgba(255,255,255,.45); margin: 28px 0; line-height: 1.6\`
   Write 1–2 sentences: who created this, their relevant credential, and that the method is built specifically for {{targetAudience}}.
 
-CTA button → \`href="#isi"\` — Write "Lihat Apa yang Ada di Dalamnya".
+CTA button → \`href="#{{section5Id}}"\` — Write "See What's Inside".
 
 ---
 
@@ -266,7 +267,7 @@ CTA button → \`href="#isi"\` — Write "Lihat Apa yang Ada di Dalamnya".
 Inner: \`max-width: 720px; margin: 0 auto\`
 
 - **Section title:** \`font-size: 28px\` (32px ≥640px) · \`font-weight: 900; color: #0f172a; letter-spacing: -0.022em; text-align: center; margin: 0 0 30px\`
-  Write a first-person purchase/registration headline — e.g. "Ya, Saya Mau Daftar Sekarang"
+  Write a first-person purchase/registration headline — e.g. "Yes, I Want to Sign Up Now"
 
 **Single product/ticket card** — gradient border, \`max-width: 480px; margin: 0 auto\`:
 \`\`\`css
@@ -288,7 +289,7 @@ Write 6 what-you-get bullets derived from the product format and key selling poi
 \`display: flex; align-items: center; gap: 10px; background: #f0f7ff; border-radius: 14px; padding: 10px 14px; margin-bottom: 16px; border: 1px solid rgba({{accentRgb}}, .14)\`
 - Creator/brand avatar \`38×38px; border-radius: 50%\` — \`https://placehold.co/38x38\`
 - Name + credential: \`font-size: 12px; font-weight: 800; color: #0f172a\`
-- Trust link: \`font-size: 11px; color: #2563eb; font-weight: 600\` — "Lihat Profil ↗"
+- Trust link: \`font-size: 11px; color: #2563eb; font-weight: 600\` — "View Profile ↗"
 
 **Price row:** \`display: flex; align-items: baseline; gap: 10px; margin: 0 0 16px\`
 - Current price: \`font-size: 22px; font-weight: 900; color: #0f172a\` — {{price}}
@@ -301,7 +302,7 @@ Note: \`font-size: 12px; color: #6b7280; text-align: center; margin: 10px 0 0\` 
 \`max-width: 420px; width: 100%\`
 Glass card: \`background: rgba(255,255,255,.78); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); border: 1px solid rgba(255,255,255,.72); box-shadow: 0 12px 30px rgba(15,23,42,.08), inset 0 1px 0 rgba(255,255,255,.85); border-radius: 22px; padding: 16px 18px 20px; text-align: center\`
 
-Top row: pulsing red dot (\`background: #ef4444; animation: pulseDot 1.8s ease infinite\`) + label \`font-size: 13px; font-weight: 700; color: #6b7280\` — write "Harga promo berakhir dalam"
+Top row: pulsing red dot (\`background: #ef4444; animation: pulseDot 1.8s ease infinite\`) + label \`font-size: 13px; font-weight: 700; color: #6b7280\` — write "Promo price ends in"
 
 \`\`\`css
 @keyframes pulseDot {
@@ -358,14 +359,14 @@ On ≤480px: \`padding: 14px 14px 18px; border-radius: 18px\` and timer \`font-s
 
 ### SECTION 8 — EMOTIONAL CLOSE / DREAM STATE (dark background #000)
 
-\`id="impian"\` · \`padding: 52px 18px\` · \`overflow: hidden\` · \`color: #fff\`
+\`id="dream"\` · \`padding: 52px 18px\` · \`overflow: hidden\` · \`color: #fff\`
 Inner: \`max-width: 640px; margin: 0 auto; text-align: center\`
 
 - **Kicker:** \`font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: {{accent}}; margin-bottom: 18px; display: inline-block\`
-  Write: a time-based kicker — e.g. "30 Hari dari Sekarang" or "Setelah Event Ini"
+  Write: a time-based kicker — e.g. "30 Days From Now" or "After This Event"
 
 - **H2:** \`font-size: 32px\` (40px ≥640px) · \`font-weight: 900; line-height: 1.1; letter-spacing: -0.025em; margin-bottom: 14px\`
-  Write 2 lines: "Bayangkan Versi" / "\`.grad span: Dirimu yang Sudah Berhasil.\`"
+  Write 2 lines: "Imagine the Version of You" / "\`.grad span: Who Already Made It.\`"
 
 - **Paragraph:** \`font-size: 15px; line-height: 1.65; color: rgba(255,255,255,.65); max-width: 520px; margin: 0 auto 36px\`
   Write 3–4 sentences: the emotional and practical outcome after using {{brandProductName}}. Focus on the feeling of clarity, confidence, and real change. Keep it warm, not manipulative.
@@ -374,7 +375,7 @@ Inner: \`max-width: 640px; margin: 0 auto; text-align: center\`
 Container: \`max-width: 900px; margin: 0 auto 40px; overflow: hidden\`
 On ≤640px: full viewport width.
 
-Inner \`.impian-track\`: \`display: flex; gap: 14px; width: max-content; animation: marqueeScroll 28s linear infinite\`
+Inner \`.dream-track\`: \`display: flex; gap: 14px; width: max-content; animation: marqueeScroll 28s linear infinite\`
 
 Each image: \`width: 180px; aspect-ratio: 4/5; border-radius: 18px; background: #1a1a1a center/cover no-repeat; flex: 0 0 auto; box-shadow: 0 16px 40px rgba(0,0,0,.5)\` — use 5 placeholder images (\`https://placehold.co/180x225\`), then duplicate for seamless loop.
 
@@ -387,7 +388,7 @@ Quote: \`font-size: 16px; font-weight: 700; line-height: 1.55; color: rgba(255,2
 Write one powerful transformation testimonial in first person: specific before-state, turning point, current state. Use {{tone}}.
 
 Byline: \`font-size: 13px; color: rgba(255,255,255,.45); font-weight: 600\`
-Write: "— Dari pengguna nyata {{brandProductName}}"
+Write: "— A real {{brandProductName}} user"
 
 **Transition question:** \`font-size: 17px; font-weight: 700; color: rgba(255,255,255,.82); margin-bottom: 28px; line-height: 1.5\`
 Write a single final binary question: keep doing it the hard way alone, or use the proven approach? Natural decision point, not pressure.
@@ -405,7 +406,7 @@ Write: {{price}} · {{accessType}}
 Inner: \`max-width: 700px; margin: 0 auto\`
 
 **Title:** \`font-size: 28px; font-weight: 900; letter-spacing: -0.022em; color: #0f172a; text-align: center; margin-bottom: 28px\`
-Write: "Pertanyaan yang Sering Ditanya"
+Write: "Frequently Asked Questions"
 
 **FAQ list** — \`display: grid; gap: 12px\`
 
@@ -429,15 +430,15 @@ When open: \`content: "–"; background: #2563eb; color: #fff\`
 Answer \`.faq-a\`: \`padding: 0 22px 18px; font-size: 14px; line-height: 1.7; color: #6b7280\`
 
 Write 9 FAQ items covering these topics in order, using context from the product and the buyer objections ({{objections}}):
-1. **Untuk siapa ini?** — {{targetAudience}} who are frustrated with the conventional approach and want what {{brandProductName}} specifically offers.
-2. **Apakah ini untuk pemula atau yang sudah berpengalaman?** — Clarify the level. If intermediate: what baseline knowledge is assumed. If beginner-friendly: what support is included.
-3. **Apa yang saya dapat setelah bayar / daftar?** — Immediate access details based on {{productFormat}} and {{accessType}}.
-4. **Berapa lama akses saya berlaku?** — Based on {{accessType}}.
-5. **Bisa diakses di HP?** — Yes, digital access — mobile, laptop, tablet, anytime.
-6. **Apakah ini pembayaran sekali atau berlangganan?** — Based on {{accessType}}. If subscription, explain what's included per cycle.
-7. **Kenapa harganya {{price}}? Apakah worth it?** — Frame the value: what would it cost to achieve this result another way? Position {{price}} as a fraction of the outcome value.
-8. **Siapa yang buat ini? Bisa dipercaya?** — {{brandProductName}} track record, credentials, and how the results in the testimonials were achieved. Source from key selling points.
-9. **Ada refund / jaminan uang kembali?** — Answer clearly and honestly based on the access type. If no refund, explain why (digital/immediate access) and what buyers should do before purchasing to be sure.
+1. **Who is this for?** — {{targetAudience}} who are frustrated with the conventional approach and want what {{brandProductName}} specifically offers.
+2. **Is this for beginners or experienced people?** — Clarify the level. If intermediate: what baseline knowledge is assumed. If beginner-friendly: what support is included.
+3. **What do I get after I pay / sign up?** — Immediate access details based on {{productFormat}} and {{accessType}}.
+4. **How long does my access last?** — Based on {{accessType}}.
+5. **Can I access it on my phone?** — Yes, digital access — mobile, laptop, tablet, anytime.
+6. **Is this a one-time payment or a subscription?** — Based on {{accessType}}. If subscription, explain what's included per cycle.
+7. **Why does it cost {{price}}? Is it worth it?** — Frame the value: what would it cost to achieve this result another way? Position {{price}} as a fraction of the outcome value.
+8. **Who made this? Can I trust it?** — {{brandProductName}} track record, credentials, and how the results in the testimonials were achieved. Source from key selling points.
+9. **Is there a refund / money-back guarantee?** — Answer clearly and honestly based on the access type. If no refund, explain why (digital/immediate access) and what buyers should do before purchasing to be sure.
 
 **CTA button below FAQ:**
 \`display: inline-flex; padding: 14px 26px; border-radius: 999px; background: #2563eb; color: #fff; font-size: 14px; font-weight: 800; letter-spacing: -0.01em; border: 2px solid #2563eb; transition: background .2s ease, transform .15s ease\` → hover: \`background: #1d4ed8\`
@@ -476,10 +477,10 @@ On ≤480px: \`left: 10px; right: 10px; bottom: 10px; max-width: none\` and card
 \`\`\`js
 (function () {
   var names = [
-    'Sinta','Dewi','Rina','Nadia','Aulia','Fitri','Putri','Indah','Maya','Laila',
-    'Rizal','Dimas','Hendra','Agus','Bayu','Andi','Fajar','Irfan','Johan','Reza',
-    'Suci','Tiara','Winda','Ayu','Intan','Nurul','Salsa','Yuni','Zahra','Anisa',
-    'Iqbal','Randy','Rian','Galih','Bima','Arya','Gilang','Ilham','Naufal','Ridho'
+    'Emma','Olivia','Sophia','Mia','Chloe','Grace','Lily','Hannah','Zoe','Ella',
+    'James','Liam','Noah','Ethan','Lucas','Daniel','Ryan','Adam','Leo','Sam',
+    'Sarah','Anna','Julia','Laura','Nina','Maya','Lena','Clara','Aria','Nora',
+    'David','Alex','Ben','Max','Oscar','Jack','Kai','Owen','Eli','Theo'
   ];
   var product = '{{brandProductName}}';
   var popup = document.getElementById('salesPopup');

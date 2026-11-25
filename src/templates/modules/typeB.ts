@@ -1,16 +1,17 @@
 import type { TemplateModule } from '../index';
 
 const typeB: TemplateModule = {
-  label: 'Produk Digital',
+  label: 'Digital Product',
+  section5Id: 'product-contents',
   storageKey: 'dpCountdownEnd_v1',
   popupVerb: 'just downloaded',
 
   s5: `### SECTION 5 — WHAT'S INSIDE THE PRODUCT (light background)
 
-\`id="isi-produk"\` · \`padding: 48px 18px\`
+\`id="product-contents"\` · \`padding: 48px 18px\`
 Inner: \`max-width: 820px; margin: 0 auto; text-align: center\`
 
-**H2:** Write: "Apa yang Ada di Dalam" on line 1, then the product name on line 2 wrapped in \`.grad\`.
+**H2:** Write: "What's Inside" on line 1, then the product name on line 2 wrapped in \`.grad\`.
 
 **Subtitle:** Write: product format (file types, total pages/modules, resource count) — one line.
 
@@ -37,21 +38,21 @@ Item 4 goes full-width below the 2×2 grid (\`grid-template-columns: 1fr\`).
 Uses gradient border technique:
 \`border: 2px solid transparent; background: linear-gradient(#fff,#fff) padding-box, linear-gradient(135deg, {{accent}}, #34d399) border-box; border-radius: 20px; padding: 20px 18px;\`
 
-Pill badge: accent color · write "BONUS GRATIS" · Title: "Yang Langsung Bisa Dipakai"
+Pill badge: accent color · write "FREE BONUS" · Title: "Ready to Use Right Away"
 List 3 immediate-use bonuses: each with emoji + name + value or practical benefit.`,
 
   s7: `### SECTION 7 — BUYER RESULTS (light background)
 
-\`id="bukti"\` · \`padding: 48px 18px\`
+\`id="proof"\` · \`padding: 48px 18px\`
 Inner: \`max-width: 900px; margin: 0 auto\`
 
-**H2 (centered):** Write: "Bukan Janji." + \`.grad\` span: "Hasil Nyata Pembeli."
+**H2 (centered):** Write: "Not Promises." + \`.grad\` span: "Real Buyer Results."
 
 **Product credibility block (centered, \`text-align: center; margin-bottom: 28px\`):**
 - Product thumbnail \`100×100px; border-radius: 16px; margin: 0 auto 12px\` — \`https://placehold.co/100x100\`
 - Gradient kicker: creator/brand name + "Buyer Results"
-- Gradient heading: "Hasil Nyata Setelah Menerapkan {{brandProductName}}"
-- Paragraph: "Screenshot dan data dari pembeli nyata — bukan testimoni berbayar."
+- Gradient heading: "Real Results After Applying {{brandProductName}}"
+- Paragraph: "Screenshots and data from real buyers — not paid testimonials."
 
 **Horizontal scroll card slider** (same CSS as base):
 
@@ -63,8 +64,8 @@ Write 6 proof cards built from the key selling points and product outcomes:
 5. Volume proof — buyer count, download count, or "X people already using this"
 6. Repeat purchase / recommendation rate — buyers who bought again or referred others
 
-Below slider: "Swipe kiri/kanan untuk lihat lebih banyak."
-CTA button → \`href="{{checkoutAnchor}}"\` — Write "Download Sekarang"`,
+Below slider: "Swipe left or right to see more."
+CTA button → \`href="{{checkoutAnchor}}"\` — Write "Download Now"`,
 };
 
 export default typeB;

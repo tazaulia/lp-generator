@@ -3,6 +3,7 @@ import TextArea from '../ui/TextArea';
 import GroupedDropdown from '../ui/GroupedDropdown';
 import programDurationOptions from '../../data/programDurationOptions';
 import type { FormState, FormAction } from '../../hooks/useFormState';
+import { CUSTOM_OPTION } from '../../data/customOption';
 
 interface Props {
   state: FormState;
@@ -16,47 +17,47 @@ export default function SectionProduct({ state, dispatch, errors }: Props) {
     dispatch({ type: 'SET_FIELD', field, value });
 
   const showDuration = state.templateType === 'A';
-  const showDurationCustom = state.programDuration === 'Lainnya (Isi Manual)';
+  const showDurationCustom = state.programDuration === CUSTOM_OPTION;
 
   return (
     <div className="space-y-4">
       <TextInput
-        label="Format Produk"
+        label="Product Format"
         value={state.productFormat}
         onChange={set('productFormat')}
-        placeholder="Cth: 5 video modul + ebook + 3 bonus tools"
+        placeholder="e.g. 5 video modules + ebook + 3 bonus tools"
         required
-        error={errors.includes('Format Produk')}
+        error={errors.includes('Product Format')}
       />
 
       <TextArea
-        label="Keunggulan Produk & Core Promise"
+        label="Key Selling Points & Core Promise"
         value={state.keySellingPoints}
         onChange={set('keySellingPoints')}
-        placeholder="Tulis janji utama + 3–5 keunggulan kunci yang membedakan dari kompetitor. Cth: Turun berat badan permanen tanpa obat, tanpa pantang makan ekstrem, dalam 12 minggu."
+        placeholder="Write your core promise + 3–5 key strengths that set you apart from competitors. e.g. Lose weight for good — no pills, no extreme diets — in 12 weeks."
         required
         rows={4}
-        error={errors.includes('Keunggulan Produk')}
+        error={errors.includes('Key Selling Points')}
       />
 
       {showDuration && (
         <>
           <GroupedDropdown
-            label="Durasi Program"
+            label="Program Duration"
             value={state.programDuration}
             onChange={set('programDuration')}
             options={[...programDurationOptions]}
             required
-            error={errors.includes('Durasi Program')}
+            error={errors.includes('Program Duration')}
           />
           {showDurationCustom && (
             <TextInput
-              label="Durasi (isi manual)"
+              label="Program Duration (custom)"
               value={state.programDurationCustom}
               onChange={set('programDurationCustom')}
-              placeholder="Cth: 10 Minggu"
+              placeholder="e.g. 10 Weeks"
               required
-              error={errors.includes('Durasi Program (isi manual)')}
+              error={errors.includes('Program Duration (custom)')}
             />
           )}
         </>

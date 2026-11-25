@@ -14,12 +14,12 @@ export default function SectionIdentity({ state, dispatch, errors }: Props) {
 
   return (
     <TextInput
-      label="Nama Brand / Produk"
+      label="Brand / Product Name"
       value={state.brandProductName}
       onChange={set('brandProductName')}
-      placeholder="Cth: Taza Nutrition · Blueprint Weight Loss 12 Minggu"
+      placeholder="e.g. Taza Nutrition · 12-Week Weight Loss Blueprint"
       required
-      error={errors.includes('Nama Brand / Produk')}
+      error={errors.includes('Brand / Product Name')}
     />
   );
 }

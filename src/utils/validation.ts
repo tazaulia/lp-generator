@@ -1,4 +1,5 @@
 import type { FormState } from '../hooks/useFormState';
+import { CUSTOM_OPTION } from '../data/customOption';
 
 export interface ValidationResult {
   errors: string[];
@@ -22,20 +23,20 @@ const REQUIRED: (keyof FormState)[] = [
 ];
 
 const FIELD_LABELS: Partial<Record<keyof FormState, string>> = {
-  templateType: 'Tipe Template',
-  brandProductName: 'Nama Brand / Produk',
-  productFormat: 'Format Produk',
-  keySellingPoints: 'Keunggulan Produk',
-  price: 'Harga',
-  accessType: 'Tipe Akses',
-  ctaText: 'Teks CTA',
-  scarcityType: 'Tipe Kelangkaan',
-  awarenessLevel: 'Level Awareness',
-  targetAudience: 'Target Audiens',
+  templateType: 'Template Type',
+  brandProductName: 'Brand / Product Name',
+  productFormat: 'Product Format',
+  keySellingPoints: 'Key Selling Points',
+  price: 'Price',
+  accessType: 'Access Type',
+  ctaText: 'CTA Text',
+  scarcityType: 'Scarcity Type',
+  awarenessLevel: 'Awareness Level',
+  targetAudience: 'Target Audience',
   tone: 'Tone',
-  colorPalette: 'Palet Warna',
+  colorPalette: 'Color Palette',
   checkoutAnchor: 'Checkout Anchor',
-  programDuration: 'Durasi Program',
+  programDuration: 'Program Duration',
 };
 
 export function validateForm(state: FormState): ValidationResult {
@@ -51,14 +52,14 @@ export function validateForm(state: FormState): ValidationResult {
     errors.push(FIELD_LABELS['programDuration']!);
   }
 
-  if (state.ctaText === 'Isi Manual (Ketik Sendiri)' && !state.ctaCustom.trim()) {
-    errors.push('Teks CTA (isi manual)');
+  if (state.ctaText === CUSTOM_OPTION && !state.ctaCustom.trim()) {
+    errors.push('CTA Text (custom)');
   }
-  if (state.targetAudience === 'Lainnya (Isi Manual)' && !state.targetAudienceCustom.trim()) {
-    errors.push('Target Audiens (isi manual)');
+  if (state.targetAudience === CUSTOM_OPTION && !state.targetAudienceCustom.trim()) {
+    errors.push('Target Audience (custom)');
   }
-  if (state.programDuration === 'Lainnya (Isi Manual)' && !state.programDurationCustom.trim()) {
-    errors.push('Durasi Program (isi manual)');
+  if (state.programDuration === CUSTOM_OPTION && !state.programDurationCustom.trim()) {
+    errors.push('Program Duration (custom)');
   }
 
   return { errors, isValid: errors.length === 0 };

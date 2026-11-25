@@ -9,17 +9,17 @@ Output one complete `<!DOCTYPE html>` file.
 Fill in the values below. The rest of the prompt uses them to generate the full page.
 
 - **Brand / Creator name:** [e.g. Taza Studio / Rifqy Hakim]
-- **Product name:** [e.g. The Indonesian Food Business Starter Kit]
+- **Product name:** [e.g. The Food Business Starter Kit]
 - **Product format:** [e.g. 68-page PDF ebook + 4 Google Sheets templates + 1 Notion board]
 - **Core outcome promise:** [e.g. launch your food business with a proven system, in 30 days]
-- **Key differentiators (3):** [e.g. Indonesia-specific, ready-to-use templates, no business degree needed]
+- **Key differentiators (3):** [e.g. market-specific, ready-to-use templates, no business degree needed]
 - **First result timeframe:** [e.g. 30 days to first result]
 - **Creator authority (optional):** [e.g. Built from running my own catering business for 5 years — used by 300+ buyers.]
 - **Social proof metric:** [e.g. 300+ buyers, avg 4.9/5 rating]
-- **Price:** [e.g. Rp 149.000]
-- **Original / crossed-out price:** [e.g. Rp 350.000]
+- **Price:** [e.g. $39]
+- **Original / crossed-out price:** [e.g. $89]
 - **Access type:** [e.g. one-time payment, instant download, lifetime access]
-- **Language:** [e.g. Indonesian (Bahasa Indonesia)]
+- **Language:** [e.g. English]
 - **Tone:** [e.g. practical, encouraging, no-fluff]
 - **Accent color:** [e.g. #0a84ff]
 - **Gradient (3 stops):** [e.g. linear-gradient(135deg, #0a84ff, #5ac8fa, #64d2ff)]
@@ -169,8 +169,8 @@ Inner: `max-width: 560px; margin: 0 auto; text-align: center`
   Write 4 credibility bullets covering: (1) built from real experience (mention creator authority or buyer count), (2) immediately usable — no setup or extra tools needed, (3) locally specific / relevant to the exact buyer context, (4) the key differentiator vs the generic alternative.
 
 - **Two CTA buttons** — `display: flex; gap: 14px; justify-content: center; flex-wrap: wrap`
-  - Ghost/outline button → `href="#testimoni"` — Write "See What Buyers Say" equivalent
-  - Filled accent button → `href="#isi-produk"` — Write "Show Me What's Inside" equivalent
+  - Ghost/outline button → `href="#testimonials"` — Write "See What Buyers Say" equivalent
+  - Filled accent button → `href="#product-contents"` — Write "Show Me What's Inside" equivalent
 
   Ghost style: `background: transparent; color: [accent]; border: 1px solid rgba([accent rgb], .6)` — hover fills accent solid
   Filled style: `background: [accent]; color: #fff; box-shadow: 0 14px 34px rgba([accent rgb], .32)`
@@ -180,7 +180,7 @@ Inner: `max-width: 560px; margin: 0 auto; text-align: center`
 
 ### SECTION 3 — BUYER TESTIMONIALS (light background)
 
-`id="testimoni"` · `padding: 40px 18px 48px`
+`id="testimonials"` · `padding: 40px 18px 48px`
 Inner: `max-width: 920px; margin: 0 auto; text-align: center`
 
 - **Section title:** `font-size: 24px; font-weight: 800; letter-spacing: -0.022em; margin-bottom: 6px`
@@ -216,13 +216,13 @@ Write: — [Common first name, relevant to the target market's demographics]
 Below cards: `font-size: 11px; color: rgba(0,0,0,.42); margin: 16px 0 22px`
 Write 1 sentence: this product works for people across different situations — name 2–3 buyer personas (e.g. first-timers, people pivoting careers, side-hustlers).
 
-CTA button → `href="#kenapa-susah"` — Write a question pointing to why doing this without a guide is hard (matches next section).
+CTA button → `href="#why-its-hard"` — Write a question pointing to why doing this without a guide is hard (matches next section).
 
 ---
 
 ### SECTION 4 — PROBLEM REFRAME (dark background #0b0c10)
 
-`id="kenapa-susah"` · `padding: 52px 18px` · `color: #fff`
+`id="why-its-hard"` · `padding: 52px 18px` · `color: #fff`
 Inner: `max-width: 820px; margin: 0 auto; text-align: center`
 
 - **H2:** `font-size: 28px` (34px ≥640px) · `font-weight: 900; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 14px`
@@ -255,13 +255,13 @@ Write the exact inverse of each left-card point, same order: everything in one p
   If creator authority is provided: write 1–2 sentences about the creator's credentials and why this product exists (e.g. built from their own experience, validated by buyer count).
   If not: write 1 sentence about who this product was designed for and what problem it solves.
 
-CTA button → `href="#isi-produk"` — Write "Show Me What's Inside" equivalent.
+CTA button → `href="#product-contents"` — Write "Show Me What's Inside" equivalent.
 
 ---
 
 ### SECTION 5 — WHAT'S INSIDE (light background)
 
-`id="isi-produk"` · `padding: 48px 18px`
+`id="product-contents"` · `padding: 48px 18px`
 Inner: `max-width: 820px; margin: 0 auto; text-align: center`
 
 - **H2:** `font-size: 28px` (34px ≥640px) · `font-weight: 900; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 8px`
@@ -409,7 +409,7 @@ On ≤480px: `padding: 14px 14px 18px; border-radius: 18px` and timer `font-size
 
 ### SECTION 7 — BUYER PROOF (light background)
 
-`id="bukti"` · `padding: 48px 18px`
+`id="proof"` · `padding: 48px 18px`
 Inner: `max-width: 900px; margin: 0 auto`
 
 - **H2 (centered):** `font-size: 28px` (32px ≥640px) · `font-weight: 900; letter-spacing: -0.022em; line-height: 1.2; margin-bottom: 10px`
@@ -423,7 +423,7 @@ Inner: `max-width: 900px; margin: 0 auto`
 **Horizontal scroll card slider:**
 `display: flex; gap: 14px; overflow-x: auto; padding: 6px 2px 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(0,0,0,.12) rgba(0,0,0,.04)`
 
-Each `.bukti-card`: `scroll-snap-align: start; flex: 0 0 auto; width: 300px` (340px ≥640px) · `background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 20px; box-shadow: 0 16px 50px rgba(0,0,0,.07); overflow: hidden`
+Each `.proof-card`: `scroll-snap-align: start; flex: 0 0 auto; width: 300px` (340px ≥640px) · `background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 20px; box-shadow: 0 16px 50px rgba(0,0,0,.07); overflow: hidden`
 
 Image area: `aspect-ratio: 5/3; background: rgba(0,0,0,.04)` — img `object-fit: cover; width: 100%; height: 100%` — use `https://placehold.co/340x204` — these represent buyer result screenshots (social media posts, before/after, work produced using the product, etc.)
 
@@ -450,7 +450,7 @@ Scroll hint: `font-size: 12px; color: rgba(0,0,0,.4); font-weight: 600; text-ali
 
 ### SECTION 8 — EMOTIONAL CLOSE / DREAM STATE (dark background #000)
 
-`id="impian"` · `padding: 52px 18px` · `overflow: hidden` · `color: #fff`
+`id="dream"` · `padding: 52px 18px` · `overflow: hidden` · `color: #fff`
 Inner: `max-width: 640px; margin: 0 auto; text-align: center`
 
 - **Kicker:** `font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: [accent]; margin-bottom: 18px; display: inline-block`
@@ -466,7 +466,7 @@ Inner: `max-width: 640px; margin: 0 auto; text-align: center`
 Container: `max-width: 900px; margin: 0 auto 40px; overflow: hidden`
 On ≤640px: full viewport width.
 
-Inner `.impian-track`: `display: flex; gap: 14px; width: max-content; animation: marqueeScroll 28s linear infinite`
+Inner `.dream-track`: `display: flex; gap: 14px; width: max-content; animation: marqueeScroll 28s linear infinite`
 
 Each image: `width: 180px; aspect-ratio: 4/5; border-radius: 18px; background: #1a1a1a center/cover no-repeat; flex: 0 0 auto; box-shadow: 0 16px 40px rgba(0,0,0,.5)` — use 5 placeholder images (`https://placehold.co/180x225`), then duplicate for seamless loop. These represent aspirational imagery of the outcome (e.g. a thriving business, a confident person at their desk, a product on a shelf).
 
@@ -569,11 +569,10 @@ On ≤480px: `left: 10px; right: 10px; bottom: 10px; max-width: none` and card `
 (function () {
   var names = [
     // Write 40 common first names appropriate to the target market's demographics.
-    // If the language is Indonesian, use common Indonesian names (mixed male/female).
-    // Example: 'Sinta','Dewi','Rina','Nadia','Aulia','Fitri','Putri','Indah','Maya','Laila',
-    // 'Rizal','Dimas','Hendra','Agus','Bayu','Andi','Fajar','Irfan','Johan','Reza',
-    // 'Suci','Tiara','Winda','Ayu','Intan','Nurul','Salsa','Yuni','Zahra','Anisa',
-    // 'Iqbal','Randy','Rian','Galih','Bima','Arya','Gilang','Ilham','Naufal','Ridho'
+    // Example: 'Emma','Olivia','Sophia','Mia','Chloe','Grace','Lily','Hannah','Zoe','Ella',
+    // 'James','Liam','Noah','Ethan','Lucas','Daniel','Ryan','Adam','Leo','Sam',
+    // 'Sarah','Anna','Julia','Laura','Nina','Maya','Lena','Clara','Aria','Nora',
+    // 'David','Alex','Ben','Max','Oscar','Jack','Kai','Owen','Eli','Theo'
   ];
   var product = ''; // Short product name from variables
   var popup = document.getElementById('salesPopup');
@@ -608,5 +607,5 @@ On ≤480px: `left: 10px; right: 10px; bottom: 10px; max-width: none` and card `
 - All same-page navigation: `href="#section-id"` anchor links with `scroll-behavior: smooth`
 - Images without real URLs: use `https://placehold.co/[width]x[height]`
 - `loading="lazy"` on all images below the fold
-- Section IDs must match exactly: `hero`, `product`, `testimoni`, `kenapa-susah`, `isi-produk`, `pricing`, `bukti`, `impian`, `faq`
+- Section IDs must match exactly: `hero`, `product`, `testimonials`, `why-its-hard`, `product-contents`, `pricing`, `proof`, `dream`, `faq`
 - No checkout button in the pricing card — the checkout form is a separate component placed below this page

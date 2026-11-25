@@ -8,19 +8,19 @@ Output one complete `<!DOCTYPE html>` file.
 
 Fill in the values below. The rest of the prompt uses them to generate the full page.
 
-- **Brand name:** [e.g. Nusaherb / Greenleaf Indonesia]
+- **Brand name:** [e.g. Greenleaf Botanicals]
 - **Product name:** [e.g. Nusaherb Slimming Tea]
 - **Product category:** [e.g. herbal tea for weight management]
 - **Core outcome promise:** [e.g. reduce bloating and support healthy weight loss in 30 days]
-- **Key differentiators (3):** [e.g. 100% natural herbs, no laxatives, certified BPOM]
+- **Key differentiators (3):** [e.g. 100% natural herbs, no laxatives, lab-certified]
 - **Key ingredients (3):** [e.g. Daun Salam, Kunyit, Temulawak]
 - **Result timeframe:** [e.g. 30 days to first visible result]
-- **Certifications:** [e.g. BPOM RI MD 152310153086, Halal MUI]
-- **Social proof metric:** [e.g. 5.000+ pembeli, rating 4.8/5]
-- **Price:** [e.g. Rp 149.000]
-- **Original / crossed-out price:** [e.g. Rp 249.000]
+- **Certifications:** [e.g. GMP certified, third-party lab tested]
+- **Social proof metric:** [e.g. 5,000+ buyers, 4.8/5 rating]
+- **Price:** [e.g. $39]
+- **Original / crossed-out price:** [e.g. $59]
 - **Access type:** [e.g. one-time purchase, free shipping]
-- **Language:** [e.g. Indonesian (Bahasa Indonesia)]
+- **Language:** [e.g. English]
 - **Tone:** [e.g. warm, health-conscious, science-backed without being clinical]
 - **Accent color:** [e.g. #30d158]
 - **Gradient (3 stops):** [e.g. linear-gradient(135deg, #30d158, #34c759, #32ade6)]
@@ -108,12 +108,12 @@ Write 2–3 sentences: what the product is, the key natural ingredients, what ce
 **1d. Product + certification strip**
 Flex row, centered, `gap: 14px; margin-bottom: 8px`:
 - Product packshot `width: 100px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,.14)` — use `https://placehold.co/100x100`
-- Certification badge image `width: 120px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.1)` — represents BPOM/Halal certificate or lab certification image
+- Certification badge image `width: 120px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,.1)` — represents a quality certificate or lab certification image
 
 Below strip: `font-size: 11px; color: rgba(0,0,0,.42); font-weight: 600; text-align: center`
-Write: Product name · Certification code (e.g. BPOM RI MD …)
+Write: Product name · Certification (e.g. GMP certified)
 
-**1e. CTA button** → `href="#produk"`
+**1e. CTA button** → `href="#product"`
 Write a curiosity-driven question asking what makes this product different — conversational (e.g. "What Makes This Different?")
 
 Below button — hint text: `font-size: 12px; color: rgba(0,0,0,.42); margin-top: 10px`
@@ -155,7 +155,7 @@ Write 4 short differentiator statements: 100% natural ingredients (no laxatives 
 
 ### SECTION 2 — WHAT IS THIS PRODUCT? (dark background #000)
 
-`id="produk"` · `padding: 52px 18px` · `color: #fff`
+`id="product"` · `padding: 52px 18px` · `color: #fff`
 Inner: `max-width: 560px; margin: 0 auto; text-align: center`
 
 - **Title:** `font-size: 28px; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 14px`
@@ -171,8 +171,8 @@ Inner: `max-width: 560px; margin: 0 auto; text-align: center`
   Write 4 credibility bullets: (1) buyer count and average rating, (2) what makes the formula natural and safe, (3) certification details, (4) who this product was made for and the specific problem it solves.
 
 - **Two CTA buttons** — `display: flex; gap: 14px; justify-content: center; flex-wrap: wrap`
-  - Ghost/outline button → `href="#testimoni-awal"` — Write "See Buyer Testimonials" equivalent
-  - Filled accent button → `href="#kandungan"` — Write "See What's Inside" equivalent
+  - Ghost/outline button → `href="#early-testimonials"` — Write "See Buyer Testimonials" equivalent
+  - Filled accent button → `href="#ingredients"` — Write "See What's Inside" equivalent
 
   Ghost style: `background: transparent; color: [accent]; border: 1px solid rgba([accent rgb], .6)`
   Filled style: `background: [accent]; color: #fff; box-shadow: 0 14px 34px rgba([accent rgb], .32)`
@@ -181,7 +181,7 @@ Inner: `max-width: 560px; margin: 0 auto; text-align: center`
 
 ### SECTION 3 — BUYER TESTIMONIALS (light background)
 
-`id="testimoni-awal"` · `padding: 40px 18px 48px`
+`id="early-testimonials"` · `padding: 40px 18px 48px`
 Inner: `max-width: 920px; margin: 0 auto; text-align: center`
 
 - **Section title:** `font-size: 24px; font-weight: 800; letter-spacing: -0.022em; margin-bottom: 6px`
@@ -203,19 +203,19 @@ Use `https://placehold.co/290x387` — represents before/after photos or product
 **Quote:** Write 4 authentic first-person quotes. Each must: mention a specific physical change, express relief that it was natural and gentle (not harsh), sound like a real person. Use the brand tone.
 
 **Name:** `font-size: 12px; color: rgba(0,0,0,.52)`
-Write: — [Common Indonesian first name], [city or context e.g. "ibu 2 anak"]
+Write: — [Common first name], [city or context e.g. "mom of 2"]
 
 ---
 
 Below cards: Write 1 sentence about the range of people this product has helped (e.g. busy moms, office workers, people who've tried multiple products before).
 
-CTA button → `href="#kenapa-gagal"` — Write a question pointing to why conventional slimming products fail.
+CTA button → `href="#why-it-fails"` — Write a question pointing to why conventional slimming products fail.
 
 ---
 
 ### SECTION 4 — PROBLEM REFRAME (dark background #0b0c10)
 
-`id="kenapa-gagal"` · `padding: 52px 18px` · `color: #fff`
+`id="why-it-fails"` · `padding: 52px 18px` · `color: #fff`
 Inner: `max-width: 820px; margin: 0 auto; text-align: center`
 
 - **H2:** `font-size: 28px` (34px ≥640px) · `font-weight: 900; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 14px`
@@ -235,13 +235,13 @@ Badge: write "THIS PRODUCT"
 
 - **Brand note:** Write 1–2 sentences about the brand's commitment to natural ingredients, their certification credentials, and what makes the formula trustworthy.
 
-CTA button → `href="#kandungan"` — Write "See What's Inside the Formula" equivalent.
+CTA button → `href="#ingredients"` — Write "See What's Inside the Formula" equivalent.
 
 ---
 
 ### SECTION 5 — INGREDIENTS / WHAT'S INSIDE (light background)
 
-`id="kandungan"` · `padding: 48px 18px`
+`id="ingredients"` · `padding: 48px 18px`
 Inner: `max-width: 820px; margin: 0 auto; text-align: center`
 
 - **H2:** `font-size: 28px` (34px ≥640px) · `font-weight: 900; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 8px`
@@ -307,7 +307,7 @@ The 6 items cover: product name and quantity per pack, key ingredients summary, 
 `display: flex; align-items: center; gap: 10px; background: #f0fdf4; border-radius: 14px; padding: 10px 14px; margin-bottom: 16px; border: 1px solid rgba([accent rgb], .14)`
 - Certification badge `38×38px; border-radius: 50%; background: [accent]; display: flex; align-items: center; justify-content: center` — use a shield/check SVG icon or placeholder
 - Certification code: `font-size: 12px; font-weight: 800; color: #0f172a` — write the certification name and code from variables
-- Verification note: `font-size: 11px; color: #16a34a; font-weight: 600` — write "Certified Safe & Halal ↗" (or local equivalent)
+- Verification note: `font-size: 11px; color: #16a34a; font-weight: 600` — write "Certified Safe ↗" (or the relevant certification)
 
 **Price row:** current price + struck-out original price.
 
@@ -355,26 +355,26 @@ Note: Write: "One-time purchase. Free shipping. Safe and certified."
 
 ### SECTION 7 — PROOF / PRODUCT RESULTS (light background)
 
-`id="bukti"` · `padding: 48px 18px`
+`id="proof"` · `padding: 48px 18px`
 Inner: `max-width: 900px; margin: 0 auto`
 
 - **H2 (centered):** Write: "Not Just Claims." in plain text + `.grad` span: "Verified Results."
 
 **Intro block (centered):**
-- Gradient kicker text: Write social proof metric from variables (e.g. "5.000+ Pembeli · Rating 4.8/5")
+- Gradient kicker text: Write social proof metric from variables (e.g. "5,000+ Buyers · 4.8/5 Rating")
 - Gradient heading: Write "Real Buyer Results — No Editing"
 - Paragraph: Write "Product photos, review screenshots, and before/after results shared by actual buyers of [product name]."
 
 **Horizontal scroll card slider:**
 
-Each `.bukti-card` — same structure as Template A/B.
+Each `.proof-card` — same structure as Template A/B.
 
 Image area: `aspect-ratio: 5/3` — represents product packshots, buyer before/after photos, lab certificate screenshots, review screenshots from marketplace.
 
 Write 6 proof cards:
-1. Lab test / certification — title: "Lab Tested & BPOM Certified" / subtitle: "Every batch tested — certificate can be verified online"
-2. Before/after result — title: e.g. "Perut Lebih Flat dalam 3 Minggu" / subtitle: "Real buyer — no exercise added, no crash diet"
-3. Weight result — title: e.g. "Turun 4 kg dalam 30 Hari" / subtitle: "Natural progress without side effects"
+1. Lab test / certification — title: "Lab Tested & Certified" / subtitle: "Every batch tested — certificate can be verified online"
+2. Before/after result — title: e.g. "Flatter Stomach in 3 Weeks" / subtitle: "Real buyer — no exercise added, no crash diet"
+3. Weight result — title: e.g. "Down 4 kg in 30 Days" / subtitle: "Natural progress without side effects"
 4. Buyer review screenshot — title: e.g. "⭐ 4.8/5 Rating" / subtitle: "[buyer count] verified reviews on [marketplace name]"
 5. Ingredient quality — title: e.g. "100% Natural — No Laxatives" / subtitle: "Formula verified by independent lab testing"
 6. Repeat buyer — title: e.g. "3x Reorder by Same Buyer" / subtitle: "Customers come back because the results are real"
@@ -390,7 +390,7 @@ Scroll hint: "Swipe left/right to see more."
 
 ### SECTION 8 — EMOTIONAL CLOSE / DREAM STATE (dark background #000)
 
-`id="impian"` · `padding: 52px 18px` · `overflow: hidden` · `color: #fff`
+`id="dream"` · `padding: 52px 18px` · `overflow: hidden` · `color: #fff`
 Inner: `max-width: 640px; margin: 0 auto; text-align: center`
 
 - **Kicker:** Write: the result timeframe from variables (e.g. "30 Days From Now")
@@ -400,7 +400,7 @@ Inner: `max-width: 640px; margin: 0 auto; text-align: center`
 - **Paragraph:** Write 3–4 sentences describing the physical and emotional outcome: fitting into clothes again, feeling lighter and more energetic, the confidence that comes from a body that functions well. Trace it back to the natural formula. Warm, not manipulative.
 
 **Inspirational marquee** — same technique as hero marquee:
-Inner `.impian-track`: use 5 placeholder images, duplicate for seamless loop.
+Inner `.dream-track`: use 5 placeholder images, duplicate for seamless loop.
 
 **Testimonial quote card:**
 Write one powerful before/after testimonial: specific starting point (e.g. had tried multiple products, frustrated by side effects), turning point (tried this product after seeing a friend's result), current state (feeling the difference within weeks, continuing because it feels right, not forced).
@@ -445,10 +445,10 @@ Same HTML structure and CSS as Template A.
 ```js
 (function () {
   var names = [
-    'Sinta','Dewi','Rina','Nadia','Aulia','Fitri','Putri','Indah','Maya','Laila',
-    'Rizal','Dimas','Hendra','Agus','Bayu','Andi','Fajar','Irfan','Johan','Reza',
-    'Suci','Tiara','Winda','Ayu','Intan','Nurul','Salsa','Yuni','Zahra','Anisa',
-    'Iqbal','Randy','Rian','Galih','Bima','Arya','Gilang','Ilham','Naufal','Ridho'
+    'Emma','Olivia','Sophia','Mia','Chloe','Grace','Lily','Hannah','Zoe','Ella',
+    'James','Liam','Noah','Ethan','Lucas','Daniel','Ryan','Adam','Leo','Sam',
+    'Sarah','Anna','Julia','Laura','Nina','Maya','Lena','Clara','Aria','Nora',
+    'David','Alex','Ben','Max','Oscar','Jack','Kai','Owen','Eli','Theo'
   ];
   var product = ''; // Short product name from variables
   var popup = document.getElementById('salesPopup');
@@ -483,5 +483,5 @@ Same HTML structure and CSS as Template A.
 - All same-page navigation: `href="#section-id"` anchor links with `scroll-behavior: smooth`
 - Images without real URLs: use `https://placehold.co/[width]x[height]`
 - `loading="lazy"` on all images below the fold
-- Section IDs must match exactly: `hero`, `produk`, `testimoni-awal`, `kenapa-gagal`, `kandungan`, `pricing`, `bukti`, `impian`, `faq`
+- Section IDs must match exactly: `hero`, `product`, `early-testimonials`, `why-it-fails`, `ingredients`, `pricing`, `proof`, `dream`, `faq`
 - No checkout button in the pricing section — the checkout form is a separate component placed below this page

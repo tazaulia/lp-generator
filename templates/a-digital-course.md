@@ -9,7 +9,7 @@ Output one complete `<!DOCTYPE html>` file.
 Fill in the values below. The rest of the prompt uses them to generate the full page.
 
 - **Coach / Business name:** [e.g. Taza / Taza Nutrition]
-- **Product name:** [e.g. Blueprint Weight Loss 12 Minggu]
+- **Product name:** [e.g. 12-Week Weight Loss Blueprint]
 - **Product type:** [e.g. Digital mini course — 5 videos + ebook + 3 bonus tools]
 - **Core outcome promise:** [e.g. lose weight permanently, naturally, without drugs]
 - **Key differentiators (3):** [e.g. 100% natural, no supplements, no extreme food restrictions]
@@ -17,10 +17,10 @@ Fill in the values below. The rest of the prompt uses them to generate the full 
 - **Program duration:** [e.g. 12 weeks]
 - **Coach credentials:** [e.g. Certified Nutrition Coach, Precision Nutrition — internationally certified]
 - **Social proof metric:** [e.g. 100+ clients, average 6–12 kg lost permanently]
-- **Price:** [e.g. Rp 99.000]
-- **Original / crossed-out price:** [e.g. Rp 500.000]
+- **Price:** [e.g. $29]
+- **Original / crossed-out price:** [e.g. $149]
 - **Access type:** [e.g. one-time payment, lifetime access]
-- **Language:** [e.g. Indonesian (Bahasa Indonesia) — use "kamu" not "Anda"]
+- **Language:** [e.g. English — friendly, second person ("you")]
 - **Tone:** [e.g. conversational, warm, science-credible — not aggressive or pushy]
 - **Accent color:** [e.g. #0a84ff]
 - **Gradient (3 stops):** [e.g. linear-gradient(135deg, #0a84ff, #5ac8fa, #64d2ff)]
@@ -171,8 +171,8 @@ Inner: `max-width: 560px; margin: 0 auto; text-align: center`
   Write 4 credibility bullets covering: (1) designed from real coaching experience (mention client count), (2) step-by-step structure that's simple and immediately applicable, (3) coach credentials and base location, (4) the all-natural approach (no drugs, no supplements, no extreme restrictions).
 
 - **Two CTA buttons** — `display: flex; gap: 14px; justify-content: center; flex-wrap: wrap`
-  - Ghost/outline button → `href="#testimoni-awal"` — Write "See Testimonials First" equivalent
-  - Filled accent button → `href="#isi-program"` — Write "I Want to See What's Inside" equivalent
+  - Ghost/outline button → `href="#early-testimonials"` — Write "See Testimonials First" equivalent
+  - Filled accent button → `href="#program-contents"` — Write "I Want to See What's Inside" equivalent
 
   Ghost style: `background: transparent; color: [accent]; border: 1px solid rgba([accent rgb], .6)` — hover fills accent solid
   Filled style: `background: [accent]; color: #fff; box-shadow: 0 14px 34px rgba([accent rgb], .32)`
@@ -181,7 +181,7 @@ Inner: `max-width: 560px; margin: 0 auto; text-align: center`
 
 ### SECTION 3 — EARLY TESTIMONIALS (light background)
 
-`id="testimoni-awal"` · `padding: 40px 18px 48px`
+`id="early-testimonials"` · `padding: 40px 18px 48px`
 Inner: `max-width: 920px; margin: 0 auto; text-align: center`
 
 - **Section title:** `font-size: 24px; font-weight: 800; letter-spacing: -0.022em; margin-bottom: 6px`
@@ -210,20 +210,20 @@ Use `https://placehold.co/290x387` for each.
 Write 4 authentic first-person quotes. Each quote must: mention a specific result, express surprise that the method wasn't punishing, sound like a real person (not marketing copy). Use the brand tone.
 
 **Name:** `font-size: 12px; color: rgba(0,0,0,.52)`
-Write: — [Common Indonesian first name]
+Write: — [Common first name]
 
 ---
 
 Below cards: `font-size: 11px; color: rgba(0,0,0,.42); margin: 16px 0 22px`
 Write 1 sentence: this method works for people across different life situations — name 2–3 personas (e.g. stay-at-home parent, office worker, student).
 
-CTA button → `href="#kenapa-gagal"` — Write a question pointing to why conventional diets fail (matches next section).
+CTA button → `href="#why-it-fails"` — Write a question pointing to why conventional diets fail (matches next section).
 
 ---
 
 ### SECTION 4 — PROBLEM REFRAME (dark background #0b0c10)
 
-`id="kenapa-gagal"` · `padding: 52px 18px` · `color: #fff`
+`id="why-it-fails"` · `padding: 52px 18px` · `color: #fff`
 Inner: `max-width: 820px; margin: 0 auto; text-align: center`
 
 - **H2:** `font-size: 28px` (34px ≥640px) · `font-weight: 900; letter-spacing: -0.025em; line-height: 1.15; margin-bottom: 14px`
@@ -255,13 +255,13 @@ Write the exact inverse of each old-way problem, in the same order: flexible cal
 - **Coach note:** `font-size: 13px; color: rgba(255,255,255,.45); margin: 28px 0; line-height: 1.6`
   Write 1–2 sentences: coach name + internationally recognized certification + institution name + that the method is 100% natural without medication.
 
-CTA button → `href="#isi-program"` — Write "See What's Inside the Program" equivalent.
+CTA button → `href="#program-contents"` — Write "See What's Inside the Program" equivalent.
 
 ---
 
 ### SECTION 5 — CURRICULUM / WHAT'S INSIDE (light background)
 
-`id="isi-program"` · `padding: 48px 18px`
+`id="program-contents"` · `padding: 48px 18px`
 Inner: `max-width: 820px; margin: 0 auto; text-align: center`
 
 - **H2:** `font-size: 28px` (34px ≥640px) · `font-weight: 900; letter-spacing: -0.025em; line-height: 1.2; margin-bottom: 8px`
@@ -402,7 +402,7 @@ On ≤480px: `padding: 14px 14px 18px; border-radius: 18px` and timer `font-size
 
 ### SECTION 7 — EVIDENCE / PROOF (light background)
 
-`id="bukti"` · `padding: 48px 18px`
+`id="proof"` · `padding: 48px 18px`
 Inner: `max-width: 900px; margin: 0 auto`
 
 - **H2 (centered):** `font-size: 28px` (32px ≥640px) · `font-weight: 900; letter-spacing: -0.022em; line-height: 1.2; margin-bottom: 10px`
@@ -417,7 +417,7 @@ Inner: `max-width: 900px; margin: 0 auto`
 **Horizontal scroll card slider:**
 `display: flex; gap: 14px; overflow-x: auto; padding: 6px 2px 10px; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; scrollbar-width: thin; scrollbar-color: rgba(0,0,0,.12) rgba(0,0,0,.04)`
 
-Each `.bukti-card`: `scroll-snap-align: start; flex: 0 0 auto; width: 300px` (340px ≥640px) · `background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 20px; box-shadow: 0 16px 50px rgba(0,0,0,.07); overflow: hidden`
+Each `.proof-card`: `scroll-snap-align: start; flex: 0 0 auto; width: 300px` (340px ≥640px) · `background: #fff; border: 1px solid rgba(0,0,0,.07); border-radius: 20px; box-shadow: 0 16px 50px rgba(0,0,0,.07); overflow: hidden`
 
 Image area: `aspect-ratio: 5/3; background: rgba(0,0,0,.04)` — img `object-fit: cover; width: 100%; height: 100%` — use `https://placehold.co/340x204`
 
@@ -445,7 +445,7 @@ Scroll hint: `font-size: 12px; color: rgba(0,0,0,.4); font-weight: 600; text-ali
 
 ### SECTION 8 — EMOTIONAL CLOSE / DREAM STATE (dark background #000)
 
-`id="impian"` · `padding: 52px 18px` · `overflow: hidden` · `color: #fff`
+`id="dream"` · `padding: 52px 18px` · `overflow: hidden` · `color: #fff`
 Inner: `max-width: 640px; margin: 0 auto; text-align: center`
 
 - **Kicker:** `font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; color: [accent]; margin-bottom: 18px; display: inline-block`
@@ -461,7 +461,7 @@ Inner: `max-width: 640px; margin: 0 auto; text-align: center`
 Container: `max-width: 900px; margin: 0 auto 40px; overflow: hidden`
 On ≤640px: full viewport width.
 
-Inner `.impian-track`: `display: flex; gap: 14px; width: max-content; animation: marqueeScroll 28s linear infinite`
+Inner `.dream-track`: `display: flex; gap: 14px; width: max-content; animation: marqueeScroll 28s linear infinite`
 
 Each image: `width: 180px; aspect-ratio: 4/5; border-radius: 18px; background: #1a1a1a center/cover no-repeat; flex: 0 0 auto; box-shadow: 0 16px 40px rgba(0,0,0,.5)` — use 5 placeholder images (`https://placehold.co/180x225`), then duplicate for seamless loop.
 
@@ -564,10 +564,10 @@ On ≤480px: `left: 10px; right: 10px; bottom: 10px; max-width: none` and card `
 (function () {
   var names = [
     // Write 40 common local first names — mixed male and female
-    // Example for Indonesian: 'Sinta','Dewi','Rina','Nadia','Aulia','Fitri','Putri','Indah','Maya','Laila',
-    // 'Rizal','Dimas','Hendra','Agus','Bayu','Andi','Fajar','Irfan','Johan','Reza',
-    // 'Suci','Tiara','Winda','Ayu','Intan','Nurul','Salsa','Yuni','Zahra','Anisa',
-    // 'Iqbal','Randy','Rian','Galih','Bima','Arya','Gilang','Ilham','Naufal','Ridho'
+    // Example: 'Emma','Olivia','Sophia','Mia','Chloe','Grace','Lily','Hannah','Zoe','Ella',
+    // 'James','Liam','Noah','Ethan','Lucas','Daniel','Ryan','Adam','Leo','Sam',
+    // 'Sarah','Anna','Julia','Laura','Nina','Maya','Lena','Clara','Aria','Nora',
+    // 'David','Alex','Ben','Max','Oscar','Jack','Kai','Owen','Eli','Theo'
     // Generate your own 40 names appropriate to the target audience.
   ];
   var product = ''; // Short product name from variables
@@ -603,5 +603,5 @@ On ≤480px: `left: 10px; right: 10px; bottom: 10px; max-width: none` and card `
 - All same-page navigation: `href="#section-id"` anchor links with `scroll-behavior: smooth`
 - Images without real URLs: use `https://placehold.co/[width]x[height]`
 - `loading="lazy"` on all images below the fold (all except hero coach photo)
-- Section IDs must match exactly: `hero`, `program`, `testimoni-awal`, `kenapa-gagal`, `isi-program`, `pricing`, `bukti`, `impian`, `faq`
+- Section IDs must match exactly: `hero`, `program`, `early-testimonials`, `why-it-fails`, `program-contents`, `pricing`, `proof`, `dream`, `faq`
 - No checkout button in the pricing section — the checkout form is a separate component placed below this page
